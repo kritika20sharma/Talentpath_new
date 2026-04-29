@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #0F2B50;
+  --navy-light: #1A3A6B;
+  --orange: #E8601C;
+  --orange-light: #F47B3A;
+  --cream: #FDF8F3;
+  --light-bg: #F4F7FA;
+  --text-dark: #1A1A2E;
+  --text-mid: #4A5568;
+  --text-light: #718096;
+  --border: #E2E8F0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  color: var(--text-dark);
+  background: #ffffff;
+}
+
+@layer utilities {
+  .text-navy { color: var(--navy); }
+  .text-orange { color: var(--orange); }
+  .bg-navy { background-color: var(--navy); }
+  .bg-navy-light { background-color: var(--navy-light); }
+  .bg-orange { background-color: var(--orange); }
+  .bg-cream { background-color: var(--cream); }
+  .bg-light { background-color: var(--light-bg); }
+  .border-orange { border-color: var(--orange); }
+  .border-navy { border-color: var(--navy); }
+}
