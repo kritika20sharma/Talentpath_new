@@ -9,37 +9,30 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'myhr — People-Powered Recruitment',
+  title: 'TalentPath — Unlock Potential, Empower People.',
   description:
-    'myhr is a leading recruitment agency specialising in permanent, temporary, volume and executive search across Accounting, Technology, Sales, HR, Marketing and more.',
+    'TalentPath Management Services offers Lateral Hiring, Executive Search and Managed Recruitment (RPO) across 9 industries. Based in Noida, serving clients globally.',
   keywords: [
-    'recruitment agency',
-    'HR recruitment',
-    'talent acquisition',
-    'permanent recruitment',
-    'executive search',
-    'temp staffing',
-    'accounting finance jobs',
-    'technology recruitment',
-    'sales recruitment',
-    'marketing recruitment',
-    'HR jobs',
-    'myhr recruitment',
-    'people-powered recruitment',
+    'TalentPath recruitment',
+    'lateral hiring India',
+    'executive search Noida',
+    'RPO recruitment process outsourcing',
+    'IT recruitment India',
+    'FMCG hiring',
+    'pharma recruitment',
+    'BFSI talent acquisition',
+    'management consulting recruitment',
+    'talent management services',
   ],
   openGraph: {
-    title: 'myhr — People-Powered Recruitment',
-    description:
-      'Connecting exceptional talent with remarkable organisations. Specialist recruitment across 8 industries.',
+    title: 'TalentPath — Unlock Potential, Empower People.',
+    description: 'Lateral Hiring, Executive Search and Managed Recruitment across 9 industries. Noida-based, globally connected.',
     type: 'website',
+    url: 'https://talentpath.co.in',
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>

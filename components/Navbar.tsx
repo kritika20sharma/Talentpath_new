@@ -4,10 +4,11 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 const navLinks = [
-  { label: 'Jobs', href: '/jobs' },
-  { label: 'What We Do', href: '/what-we-do' },
-  { label: 'Specialisations', href: '/specialisations' },
+  { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
+  { label: 'Industries', href: '/specialisations' },
+  { label: 'Services', href: '/what-we-do' },
+  { label: 'Jobs', href: '/jobs' },
   { label: 'Insights', href: '/insights' },
 ];
 
@@ -21,29 +22,17 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="flex items-center">
-              <span
-                className="text-3xl font-black tracking-tight leading-none"
-                style={{ color: 'var(--navy)' }}
-              >
-                my
+              <span className="text-2xl font-black tracking-tight leading-none" style={{ color: 'var(--navy)' }}>
+                Talent
               </span>
-              <span
-                className="text-3xl font-black tracking-tight leading-none"
-                style={{ color: 'var(--orange)' }}
-              >
-                hr
+              <span className="text-2xl font-black tracking-tight leading-none" style={{ color: 'var(--orange)' }}>
+                Path
               </span>
             </div>
-            <span
-              className="hidden sm:block text-xs font-medium tracking-widest uppercase ml-2 border-l pl-2"
-              style={{ color: 'var(--text-mid)', borderColor: 'var(--border)' }}
-            >
-              Recruitment
-            </span>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -63,14 +52,14 @@ export default function Navbar() {
               className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90 hover:shadow-md"
               style={{ backgroundColor: 'var(--orange)' }}
             >
-              Find Talent
+              Hire Talent
             </Link>
             <Link
               href="/jobs"
-              className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold border-2 transition-all hover:bg-navy hover:text-white hover:border-navy"
+              className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold border-2 transition-all hover:bg-navy hover:text-white"
               style={{ borderColor: 'var(--navy)', color: 'var(--navy)' }}
             >
-              Find a Role
+              Find a Job
             </Link>
             <button
               className="lg:hidden p-2 rounded-md"
@@ -78,18 +67,9 @@ export default function Navbar() {
               aria-label="Toggle menu"
             >
               <div className="flex flex-col gap-1.5 w-6">
-                <span
-                  className={`block h-0.5 w-full transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`}
-                  style={{ backgroundColor: 'var(--navy)' }}
-                />
-                <span
-                  className={`block h-0.5 w-full transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`}
-                  style={{ backgroundColor: 'var(--navy)' }}
-                />
-                <span
-                  className={`block h-0.5 w-full transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`}
-                  style={{ backgroundColor: 'var(--navy)' }}
-                />
+                <span className={`block h-0.5 w-full transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} style={{ backgroundColor: 'var(--navy)' }} />
+                <span className={`block h-0.5 w-full transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`} style={{ backgroundColor: 'var(--navy)' }} />
+                <span className={`block h-0.5 w-full transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} style={{ backgroundColor: 'var(--navy)' }} />
               </div>
             </button>
           </div>
@@ -112,21 +92,11 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="flex flex-col gap-3 pt-2">
-              <Link
-                href="/contact"
-                className="text-center px-5 py-3 rounded-full text-sm font-semibold text-white"
-                style={{ backgroundColor: 'var(--orange)' }}
-                onClick={() => setMobileOpen(false)}
-              >
-                Find Talent
+              <Link href="/contact" className="text-center px-5 py-3 rounded-full text-sm font-semibold text-white" style={{ backgroundColor: 'var(--orange)' }} onClick={() => setMobileOpen(false)}>
+                Hire Talent
               </Link>
-              <Link
-                href="/jobs"
-                className="text-center px-5 py-3 rounded-full text-sm font-semibold border-2"
-                style={{ borderColor: 'var(--navy)', color: 'var(--navy)' }}
-                onClick={() => setMobileOpen(false)}
-              >
-                Find a Role
+              <Link href="/jobs" className="text-center px-5 py-3 rounded-full text-sm font-semibold border-2" style={{ borderColor: 'var(--navy)', color: 'var(--navy)' }} onClick={() => setMobileOpen(false)}>
+                Find a Job
               </Link>
             </div>
           </nav>
