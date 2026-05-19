@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-const desktopVideos = [
+const videos = [
   '/videos/manufacturing.mp4',
   '/videos/warehouse.mp4',
   '/videos/it.mp4',
@@ -13,71 +13,100 @@ const desktopVideos = [
   '/videos/electronics.mp4',
   '/videos/fashion.mp4',
 ];
-const mobileVideos = ['/videos/meeting.mp4', '/videos/pharma.mp4'];
+
+const DISPLAY_MS = 5500;  // how long each clip shows
+const FADE_MS    = 1200;  // crossfade duration
 
 export default function Hero() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [nextIndex, setNextIndex] = useState(1);
-  const [fading, setFading] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const nextVideoRef = useRef<HTMLVideoElement>(null);
+  // Dual-buffer: slot A and slot B each hold a video index
+  const [indexA, setIndexA] = useState(0);
+  const [indexB, setIndexB] = useState(1);
+  const [foreground, setForeground] = useState<'A' | 'B'>('A');
+  const refA = useRef<HTMLVideoElement>(null);
+  const refB = useRef<HTMLVideoElement>(null);
+  const isFirst = useRef(true);
 
+  // Cycle every (display + fade) ms
   useEffect(() => {
-    const mq = window.matchMedia('(max-width: 768px)');
-    setIsMobile(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
+    const id = setInterval(() => {
+      setForeground(f => (f === 'A' ? 'B' : 'A'));
+    }, DISPLAY_MS + FADE_MS);
+    return () => clearInterval(id);
   }, []);
 
-  const videos = isMobile ? mobileVideos : desktopVideos;
+  // After each foreground flip, recycle the now-background slot to the next video
+  useEffect(() => {
+    if (isFirst.current) { isFirst.current = false; return; }
+    const id = setTimeout(() => {
+      if (foreground === 'B') {
+        // A just became background — load it with the video 2 steps ahead
+        setIndexA(prev => (prev + 2) % videos.length);
+      } else {
+        setIndexB(prev => (prev + 2) % videos.length);
+      }
+    }, FADE_MS + 80);
+    return () => clearTimeout(id);
+  }, [foreground]);
+
+  // Restart background slot from beginning after src update so it's fresh next time
+  useEffect(() => {
+    if (foreground === 'B' && refA.current) {
+      refA.current.currentTime = 0;
+      refA.current.play().catch(() => {});
+    }
+  }, [indexA, foreground]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setFading(true);
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % videos.length);
-        setNextIndex((prev) => (prev + 2) % videos.length);
-        setFading(false);
-      }, 1000);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [videos.length]);
+    if (foreground === 'A' && refB.current) {
+      refB.current.currentTime = 0;
+      refB.current.play().catch(() => {});
+    }
+  }, [indexB, foreground]);
+
+  const currentVideoIdx = foreground === 'A' ? indexA : indexB;
 
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden" style={{ paddingTop: '96px' }}>
 
-      {/* Video background — current */}
+      {/* Slot A */}
       <video
-        ref={videoRef}
-        key={videos[currentIndex]}
-        className="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000"
-        style={{ opacity: fading ? 0 : 1 }}
-        src={videos[currentIndex]}
-        autoPlay
-        muted
-        loop
-        playsInline
-      />
-
-      {/* Video background — next (preloaded, hidden) */}
-      <video
-        ref={nextVideoRef}
-        key={`next-${videos[nextIndex]}`}
+        ref={refA}
         className="absolute inset-0 w-full h-full object-cover z-0"
-        style={{ opacity: 0 }}
-        src={videos[nextIndex]}
+        style={{
+          opacity: foreground === 'A' ? 1 : 0,
+          transition: `opacity ${FADE_MS}ms cubic-bezier(0.4,0,0.2,1)`,
+        }}
+        src={videos[indexA]}
         autoPlay
         muted
         loop
         playsInline
       />
 
-      {/* Lightweight overlay — video stays visible, text stays readable */}
-      <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(160deg, rgba(0,20,70,0.38) 0%, rgba(0,30,90,0.44) 55%, rgba(0,10,50,0.58) 100%)' }} />
+      {/* Slot B */}
+      <video
+        ref={refB}
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        style={{
+          opacity: foreground === 'B' ? 1 : 0,
+          transition: `opacity ${FADE_MS}ms cubic-bezier(0.4,0,0.2,1)`,
+        }}
+        src={videos[indexB]}
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
 
-      {/* Subtle pattern overlay */}
+      {/* Cinematic overlay — lighter at top, denser at bottom for readability */}
+      <div
+        className="absolute inset-0 z-10"
+        style={{
+          background: 'linear-gradient(160deg, rgba(0,20,70,0.38) 0%, rgba(0,30,90,0.44) 55%, rgba(0,10,50,0.58) 100%)',
+        }}
+      />
+
+      {/* Subtle grid pattern */}
       <div className="absolute inset-0 z-10 opacity-5">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -92,7 +121,6 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-20 flex flex-col flex-1 max-w-7xl mx-auto px-6 lg:px-8 py-24">
 
-        {/* Tag */}
         <motion.div
           className="mb-6"
           initial={{ opacity: 0, y: 16 }}
@@ -104,7 +132,6 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Headline */}
         <motion.h1
           className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.08] mb-6 max-w-4xl"
           initial={{ opacity: 0, y: 20 }}
@@ -116,7 +143,6 @@ export default function Hero() {
           <span style={{ color: 'var(--orange)' }}>Build a Better Future.</span>
         </motion.h1>
 
-        {/* Tagline */}
         <motion.p
           className="text-xl font-semibold mb-3"
           style={{ color: 'rgba(255,255,255,0.90)' }}
@@ -126,6 +152,7 @@ export default function Hero() {
         >
           Unlock Potential, Empower People.
         </motion.p>
+
         <motion.p
           className="text-base max-w-xl mb-14 leading-relaxed"
           style={{ color: 'rgba(255,255,255,0.60)' }}
@@ -207,11 +234,21 @@ export default function Hero() {
           {videos.map((_, i) => (
             <button
               key={i}
-              onClick={() => { setCurrentIndex(i); setNextIndex((i + 1) % videos.length); }}
-              className="h-1.5 rounded-full transition-all duration-300"
+              onClick={() => {
+                if (foreground === 'A') {
+                  setIndexB(i);
+                  setForeground('B');
+                  setTimeout(() => setIndexA((i + 1) % videos.length), FADE_MS + 80);
+                } else {
+                  setIndexA(i);
+                  setForeground('A');
+                  setTimeout(() => setIndexB((i + 1) % videos.length), FADE_MS + 80);
+                }
+              }}
+              className="h-1.5 rounded-full transition-all duration-500"
               style={{
-                width: i === currentIndex ? '28px' : '8px',
-                backgroundColor: i === currentIndex ? 'var(--orange)' : 'rgba(255,255,255,0.35)',
+                width: i === currentVideoIdx ? '28px' : '8px',
+                backgroundColor: i === currentVideoIdx ? 'var(--orange)' : 'rgba(255,255,255,0.35)',
               }}
               aria-label={`Video ${i + 1}`}
             />
