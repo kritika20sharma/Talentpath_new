@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -20,24 +21,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between py-3">
 
-          {/* Logo — matches blueprint wordmark with path icon */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="flex items-center gap-1">
-              {/* Path arrow icon */}
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'var(--navy)' }}>
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 19L19 5M19 5H9M19 5V15" />
-                </svg>
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="text-xl font-black tracking-tight" style={{ color: 'var(--navy)' }}>
-                  Talent<span style={{ color: 'var(--orange)' }}>Path</span>
-                </span>
-                <span className="text-[9px] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-light)' }}>
-                  Connecting Talent, Creating Futures.
-                </span>
-              </div>
-            </div>
+          <Link href="/">
+            <Image src="/logo.png" alt="TalentPath" width={140} height={56} className="h-10 w-auto" priority />
           </Link>
 
           {/* Desktop nav */}
