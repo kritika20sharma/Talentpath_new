@@ -30,15 +30,15 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'py-2' : 'py-3'}`}>
+        <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'py-1' : 'py-2'}`}>
 
-          <Link href="/">
+          <Link href="/" className="flex-shrink-0 transition-transform duration-200 hover:scale-[1.03]">
             <Image
               src="/logo.png"
               alt="TalentPath"
-              width={140}
-              height={56}
-              className={`w-auto transition-all duration-300 ${scrolled ? 'h-8' : 'h-10'}`}
+              width={200}
+              height={80}
+              className={`w-auto transition-all duration-300 ${scrolled ? 'h-14' : 'h-20'}`}
               priority
             />
           </Link>

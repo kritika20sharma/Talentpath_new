@@ -38,7 +38,7 @@ export default function Hero() {
   }, [videos.length]);
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden" style={{ paddingTop: '72px' }}>
+    <section className="relative min-h-screen flex flex-col overflow-hidden" style={{ paddingTop: '96px' }}>
 
       {/* Video background — current */}
       <video
