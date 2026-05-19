@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About Us | TalentPath Management Services',
   description:
-    'TalentPath is a modern recruitment and talent acquisition company based in Noida, India — specialising in Lateral Hiring, Executive Search and Managed Recruitment across 9 industries.',
+    'Meet the co-founders and team behind TalentPath — India\'s specialist recruitment partner for Lateral Hiring, Executive Search and Managed Recruitment across 9 industries.',
 };
 
 const values = [
@@ -29,7 +30,7 @@ const values = [
 const milestones = [
   { value: '9+', label: 'Specialist industries served' },
   { value: '500+', label: 'Successful placements' },
-  { value: '200+', label: 'Client organisations' },
+  { value: '15+', label: 'Years of combined experience' },
   { value: '24/7', label: 'Consultant availability' },
 ];
 
@@ -38,7 +39,7 @@ export default function AboutPage() {
     <main>
       {/* Hero */}
       <section
-        className="pt-36 pb-20"
+        className="pt-40 pb-20"
         style={{ background: 'linear-gradient(135deg, #004bb2 0%, #1a63d4 100%)' }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -124,6 +125,153 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Co-Founders */}
+      <section className="py-24" style={{ backgroundColor: 'var(--light-bg)' }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
+              Leadership
+            </span>
+            <h2 className="text-4xl font-black" style={{ color: 'var(--navy)' }}>
+              Meet the Co-Founders
+            </h2>
+            <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: 'var(--text-mid)' }}>
+              Two leaders with decades of combined experience building India&apos;s most trusted specialist recruitment practice.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+
+            {/* Mamta Saharan */}
+            <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+              <div className="relative h-80 w-full overflow-hidden" style={{ backgroundColor: 'var(--light-bg)' }}>
+                <Image
+                  src="/images/founder-female.jpg"
+                  alt="Mamta Saharan — CEO & Co-Founder"
+                  fill
+                  className="object-cover object-top"
+                />
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,75,178,0.6) 0%, transparent 50%)' }} />
+                <div className="absolute bottom-5 left-6 right-6">
+                  <p className="text-white font-black text-2xl leading-tight">Mamta Saharan</p>
+                  <span
+                    className="inline-block mt-1 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
+                    style={{ backgroundColor: 'var(--orange)', color: 'white' }}
+                  >
+                    CEO &amp; Co-Founder
+                  </span>
+                </div>
+              </div>
+              <div className="p-7">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="h-0.5 w-8 rounded-full" style={{ backgroundColor: 'var(--orange)' }} />
+                  <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--orange)' }}>About Mamta</span>
+                </div>
+                <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-mid)' }}>
+                  Graduated from Delhi University with a Master&apos;s degree in Management from Maharshi
+                  Dayanand University, Rohtak (Haryana).
+                </p>
+                <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-mid)' }}>
+                  Mamta is the Co-Founder &amp; Chief Executive Officer and part of the Management
+                  Committee of TalentPath Management Services. She leads the recruitment processes
+                  across the Automotive vertical.
+                </p>
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--text-mid)' }}>
+                  With <strong style={{ color: 'var(--navy)' }}>8+ years of experience</strong> handling
+                  multiple clients, she is a practiced automotive industry consultant with a proven
+                  history of hiring for Indian MNCs across multi-domain functions — with deep
+                  expertise in Leadership Hiring, Plant Hiring, Manufacturing, Sales &amp; Marketing,
+                  R&amp;D across Passenger Cars, Two-wheelers, Tractors, Off-Road Vehicles, Engines
+                  and Heavy Machinery.
+                </p>
+              </div>
+            </div>
+
+            {/* Madhukar Mishra */}
+            <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+              <div className="relative h-80 w-full overflow-hidden" style={{ backgroundColor: 'var(--light-bg)' }}>
+                <Image
+                  src="/images/founder-male.jpg"
+                  alt="Madhukar Mishra — CEO & Co-Founder"
+                  fill
+                  className="object-cover object-top"
+                />
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,75,178,0.6) 0%, transparent 50%)' }} />
+                <div className="absolute bottom-5 left-6 right-6">
+                  <p className="text-white font-black text-2xl leading-tight">Madhukar Mishra</p>
+                  <span
+                    className="inline-block mt-1 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
+                    style={{ backgroundColor: 'var(--orange)', color: 'white' }}
+                  >
+                    CEO &amp; Co-Founder
+                  </span>
+                </div>
+              </div>
+              <div className="p-7">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="h-0.5 w-8 rounded-full" style={{ backgroundColor: 'var(--orange)' }} />
+                  <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--orange)' }}>About Madhukar</span>
+                </div>
+                <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-mid)' }}>
+                  A Magadh University graduate with a Master&apos;s degree from the Institute of
+                  Management Technology, Ghaziabad (UP).
+                </p>
+                <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-mid)' }}>
+                  Madhukar is the Co-Founder &amp; Chief Executive Officer and part of the Management
+                  Committee of TalentPath Management Services. He leads the P&amp;L of the firm&apos;s
+                  core recruitment business across several industry verticals.
+                </p>
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--text-mid)' }}>
+                  With an established reputation in Automobile, Manufacturing and Non-Banking
+                  Financial Services, Madhukar brings <strong style={{ color: 'var(--navy)' }}>15+ years
+                  of experience</strong> recruiting senior executives across Automobile, FMCG,
+                  Consumer Durables, EPC, Oil &amp; Gas, Banking, NBFC, Analytics &amp; Consulting —
+                  with leading organisations throughout India.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Photo */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
+              Our Team
+            </span>
+            <h2 className="text-4xl font-black" style={{ color: 'var(--navy)' }}>
+              The people behind your next hire.
+            </h2>
+            <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: 'var(--text-mid)' }}>
+              Our consultants are industry specialists — not generalists handing out CVs. Each one
+              brings deep sector knowledge and a genuine network built over years of focused practice.
+            </p>
+          </div>
+
+          <div className="relative rounded-3xl overflow-hidden shadow-xl">
+            <Image
+              src="/images/team.jpg"
+              alt="TalentPath Team"
+              width={1400}
+              height={800}
+              className="w-full object-cover"
+              style={{ maxHeight: '520px', objectPosition: 'center top' }}
+            />
+            <div
+              className="absolute inset-0 flex items-end"
+              style={{ background: 'linear-gradient(to top, rgba(0,20,70,0.75) 0%, transparent 55%)' }}
+            >
+              <div className="p-8 lg:p-12 w-full">
+                <p className="text-white font-black text-2xl mb-1">TalentPath Management Services</p>
+                <p className="text-white/70 text-sm">Noida, India — Building careers. Powering organisations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Values */}
       <section className="py-24" style={{ backgroundColor: 'var(--light-bg)' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -153,39 +301,6 @@ export default function AboutPage() {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team placeholder */}
-      <section id="team" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
-              Our Team
-            </span>
-            <h2 className="text-4xl font-black" style={{ color: 'var(--navy)' }}>
-              The people behind your next hire.
-            </h2>
-            <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: 'var(--text-mid)' }}>
-              Our consultants are specialists in their industries — not generalists handing out CVs.
-              Each one brings deep sector knowledge and a genuine network built over years.
-            </p>
-          </div>
-
-          <div className="rounded-2xl p-10 text-center" style={{ backgroundColor: 'var(--light-bg)' }}>
-            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'var(--navy)' }}>
-              <svg className="w-8 h-8" fill="none" stroke="white" strokeWidth="1.8" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--navy)' }}>Team profiles coming soon</h3>
-            <p className="text-sm" style={{ color: 'var(--text-mid)' }}>
-              We&apos;re updating our team section — check back shortly. In the meantime, reach out directly at{' '}
-              <a href="mailto:career@talentpath.co.in" className="font-semibold" style={{ color: 'var(--orange)' }}>
-                career@talentpath.co.in
-              </a>
-            </p>
           </div>
         </div>
       </section>
