@@ -1,19 +1,76 @@
+'use client';
+
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
+const desktopVideos = ['/videos/v1.mp4', '/videos/v2.mp4', '/videos/v3.mp4', '/videos/v4.mp4'];
+const mobileVideos = ['/videos/v5.mp4', '/videos/v6.mp4'];
+
 export default function Hero() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState(1);
+  const [fading, setFading] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const nextVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 768px)');
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  const videos = isMobile ? mobileVideos : desktopVideos;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFading(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % videos.length);
+        setNextIndex((prev) => (prev + 2) % videos.length);
+        setFading(false);
+      }, 1000);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [videos.length]);
+
   return (
-    <section className="relative min-h-screen flex flex-col" style={{ paddingTop: '72px' }}>
-      {/* Background */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{ background: 'linear-gradient(135deg, #004bb2 0%, #1a63d4 60%, #003d94 100%)' }}
-      >
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 15% 50%, rgba(222,132,15,0.35) 0%, transparent 50%),
-                            radial-gradient(circle at 85% 15%, rgba(255,255,255,0.12) 0%, transparent 40%)`,
-        }} />
-        {/* Subtle grid */}
-        <svg className="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
+    <section className="relative min-h-screen flex flex-col overflow-hidden" style={{ paddingTop: '72px' }}>
+
+      {/* Video background — current */}
+      <video
+        ref={videoRef}
+        key={videos[currentIndex]}
+        className="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000"
+        style={{ opacity: fading ? 0 : 1 }}
+        src={videos[currentIndex]}
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+
+      {/* Video background — next (preloaded, hidden) */}
+      <video
+        ref={nextVideoRef}
+        key={`next-${videos[nextIndex]}`}
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        style={{ opacity: 0 }}
+        src={videos[nextIndex]}
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(135deg, rgba(0,75,178,0.82) 0%, rgba(0,40,110,0.75) 60%, rgba(0,20,70,0.70) 100%)' }} />
+
+      {/* Subtle pattern overlay */}
+      <div className="absolute inset-0 z-10 opacity-5">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
               <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" strokeWidth="1" />
@@ -23,7 +80,9 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="relative z-10 flex flex-col flex-1 max-w-7xl mx-auto px-6 lg:px-8 py-24">
+      {/* Content */}
+      <div className="relative z-20 flex flex-col flex-1 max-w-7xl mx-auto px-6 lg:px-8 py-24">
+
         {/* Tag */}
         <div className="mb-6">
           <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest" style={{ backgroundColor: 'var(--orange)', color: 'white' }}>
@@ -31,23 +90,23 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Main headline — from blueprint */}
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.08] mb-6 max-w-4xl" style={{ fontFamily: 'var(--font-poppins)' }}>
+        {/* Headline */}
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.08] mb-6 max-w-4xl">
           Find the Right Talent,
           <br />
           <span style={{ color: 'var(--orange)' }}>Build a Better Future.</span>
         </h1>
 
-        {/* Brand tagline from blueprint */}
-        <p className="text-xl font-semibold mb-3" style={{ color: 'rgba(255,255,255,0.85)' }}>
+        {/* Tagline */}
+        <p className="text-xl font-semibold mb-3" style={{ color: 'rgba(255,255,255,0.90)' }}>
           Connecting Talent, Creating Futures.
         </p>
-        <p className="text-base text-white/55 max-w-xl mb-14 leading-relaxed">
+        <p className="text-base max-w-xl mb-14 leading-relaxed" style={{ color: 'rgba(255,255,255,0.60)' }}>
           TalentPath delivers Lateral Hiring, Executive Search and Managed Recruitment Services
           across 9 specialist industries — with precision, speed and genuine care.
         </p>
 
-        {/* Dual CTA cards */}
+        {/* Dual CTA */}
         <div className="grid sm:grid-cols-2 gap-5 max-w-2xl">
           {/* Employers */}
           <div className="group rounded-2xl p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl" style={{ backgroundColor: 'var(--orange)' }}>
@@ -69,8 +128,8 @@ export default function Hero() {
           </div>
 
           {/* Job seekers */}
-          <div className="group rounded-2xl p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl border border-white/20" style={{ backgroundColor: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(10px)' }}>
-            <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: 'rgba(222,132,15,0.3)' }}>
+          <div className="group rounded-2xl p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl border border-white/20" style={{ backgroundColor: 'rgba(255,255,255,0.10)', backdropFilter: 'blur(12px)' }}>
+            <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: 'rgba(222,132,15,0.35)' }}>
               <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
                 <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
               </svg>
@@ -89,13 +148,8 @@ export default function Hero() {
         </div>
 
         {/* Trust badges */}
-        <div className="mt-14 pt-8 border-t border-white/10 flex flex-wrap gap-8 items-center">
-          {[
-            'Trustworthy & Reliable',
-            'Industry-Specific Experts',
-            'Best Turn-Around Time',
-            '24/7 Support',
-          ].map((badge) => (
+        <div className="mt-14 pt-8 border-t border-white/15 flex flex-wrap gap-8 items-center">
+          {['Trustworthy & Reliable', 'Industry-Specific Experts', 'Best Turn-Around Time', '24/7 Support'].map((badge) => (
             <div key={badge} className="flex items-center gap-2">
               <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'var(--orange)' }}>
                 <svg className="w-3 h-3 fill-white" viewBox="0 0 20 20">
@@ -104,6 +158,22 @@ export default function Hero() {
               </div>
               <span className="text-white/65 text-sm font-medium">{badge}</span>
             </div>
+          ))}
+        </div>
+
+        {/* Video dot indicators */}
+        <div className="mt-8 flex gap-2">
+          {videos.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => { setCurrentIndex(i); setNextIndex((i + 1) % videos.length); }}
+              className="h-1.5 rounded-full transition-all duration-300"
+              style={{
+                width: i === currentIndex ? '28px' : '8px',
+                backgroundColor: i === currentIndex ? 'var(--orange)' : 'rgba(255,255,255,0.35)',
+              }}
+              aria-label={`Video ${i + 1}`}
+            />
           ))}
         </div>
       </div>
