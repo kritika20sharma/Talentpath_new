@@ -3,27 +3,27 @@ import Link from 'next/link';
 const posts = [
   {
     category: 'Hiring Trends',
-    title: '2026 Talent Guide: What the Best Employers Are Doing Differently',
+    title: "India's Talent Market 2026: Where the Opportunities Are",
     excerpt:
-      'From flexible work arrangements to skills-based hiring, discover the strategies top organisations are using to attract and retain exceptional talent in 2026.',
+      'From the EV push in Automobile to analytics-led roles in BFSI, discover which sectors are hiring aggressively and what talent profiles are commanding premiums.',
     date: 'April 2026',
     readTime: '5 min read',
     color: 'var(--navy)',
   },
   {
     category: 'Career Advice',
-    title: 'How to Stand Out in a Crowded Job Market Without Overselling Yourself',
+    title: 'How to Make a Lateral Move Without Starting Over',
     excerpt:
-      'In an era of AI-generated cover letters and inflated CVs, authenticity is your greatest differentiator. Here\'s how to tell your real career story compellingly.',
+      'Switching industries mid-career is possible — and lucrative when done right. Here\'s how TalentPath\'s consultants help professionals position their transferable skills for maximum impact.',
     date: 'March 2026',
     readTime: '4 min read',
     color: 'var(--orange)',
   },
   {
     category: 'Salary Guide',
-    title: 'Australia\'s 2026 Salary Benchmarks for Technology & Finance Roles',
+    title: "India's 2026 Salary Benchmarks: BFSI, Pharma & Oil/Gas Roles",
     excerpt:
-      'Our annual salary data across 8 specialist divisions, updated with real placement data from 4,200+ candidates — the benchmark employers and professionals trust.',
+      'Real compensation data across 9 specialist verticals — built from active placement intelligence, not surveys. The benchmark hiring managers and mid-senior professionals rely on.',
     date: 'February 2026',
     readTime: '7 min read',
     color: 'var(--navy)',

@@ -9,9 +9,9 @@ import InsightsPreview from '@/components/InsightsPreview';
 import Newsletter from '@/components/Newsletter';
 
 export const metadata: Metadata = {
-  title: 'myhr — People-Powered Recruitment | Home',
+  title: 'TalentPath — Unlock Potential, Empower People.',
   description:
-    'myhr connects exceptional talent with remarkable organisations. Specialist recruitment in Accounting, Tech, Sales, HR, Marketing, Customer Experience & more.',
+    'TalentPath connects exceptional talent with remarkable organisations across 9 specialist industries. Lateral Hiring, Executive Search and RPO across India.',
 };
 
 export default function Home() {

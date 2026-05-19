@@ -65,8 +65,8 @@ export default function Hero() {
         playsInline
       />
 
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(135deg, rgba(0,75,178,0.82) 0%, rgba(0,40,110,0.75) 60%, rgba(0,20,70,0.70) 100%)' }} />
+      {/* Lightweight overlay — video stays visible, text stays readable */}
+      <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(160deg, rgba(0,20,70,0.38) 0%, rgba(0,30,90,0.44) 55%, rgba(0,10,50,0.58) 100%)' }} />
 
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 z-10 opacity-5">
@@ -99,7 +99,7 @@ export default function Hero() {
 
         {/* Tagline */}
         <p className="text-xl font-semibold mb-3" style={{ color: 'rgba(255,255,255,0.90)' }}>
-          Connecting Talent, Creating Futures.
+          Unlock Potential, Empower People.
         </p>
         <p className="text-base max-w-xl mb-14 leading-relaxed" style={{ color: 'rgba(255,255,255,0.60)' }}>
           TalentPath delivers Lateral Hiring, Executive Search and Managed Recruitment Services

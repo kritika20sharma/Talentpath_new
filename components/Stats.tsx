@@ -1,8 +1,8 @@
 const stats = [
-  { value: '20+', label: 'Years advising global businesses' },
-  { value: '9', label: 'Specialist industry verticals' },
+  { value: '9+', label: 'Specialist industry verticals' },
+  { value: '500+', label: 'Successful placements' },
+  { value: '3 days', label: 'Average shortlist delivery' },
   { value: '24/7', label: 'Client support availability' },
-  { value: '100%', label: 'Commitment to best TAT' },
 ];
 
 export default function Stats() {

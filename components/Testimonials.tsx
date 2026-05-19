@@ -1,39 +1,39 @@
 const testimonials = [
   {
     quote:
-      'myhr found us a CFO within three weeks who was genuinely the right cultural fit — not just technically qualified. Three years on, she\'s transformed our finance function.',
-    name: 'James Thornton',
-    role: 'CEO, Meridian Group',
+      'TalentPath found us a VP of Sales within three weeks — genuinely the right cultural fit, not just technically qualified. They understood our growth stage and delivered candidates we couldn\'t have reached on our own.',
+    name: 'Rajesh Khanna',
+    role: 'CEO, Vantage Retail Group',
     type: 'client',
-    initials: 'JT',
-    color: '#1A3A6B',
+    initials: 'RK',
+    color: '#004bb2',
   },
   {
     quote:
-      'After six months of searching on my own, myhr placed me in my dream role in 10 days. They understood exactly what I was looking for, not just the salary range.',
+      'After months of applying through portals with no response, TalentPath placed me in my dream role in 12 days. They understood exactly what I was looking for — not just the CTC.',
     name: 'Priya Nair',
-    role: 'Senior Data Engineer',
+    role: 'Senior Data Engineer, Bengaluru',
     type: 'candidate',
     initials: 'PN',
-    color: '#E8601C',
+    color: '#de840f',
   },
   {
     quote:
-      'We\'ve used many recruitment agencies over the years. myhr is in a different league — proactive, knowledgeable, and they actually listen. Our go-to for all technology hires.',
-    name: 'Sophie Lawson',
-    role: 'Head of People, Vantage Fintech',
+      'We\'ve worked with many agencies across NCR. TalentPath is in a different league — proactive, honest, and they actually understand the BFSI space. Our go-to partner for leadership hires.',
+    name: 'Ananya Mehta',
+    role: 'Head of HR, Apex Financial Services',
     type: 'client',
-    initials: 'SL',
+    initials: 'AM',
     color: '#0F2B50',
   },
   {
     quote:
-      'The team genuinely cared about my career progression, not just filling a vacancy. They prepped me thoroughly and stayed in touch well after I started. Exceptional service.',
-    name: 'Marcus Webb',
-    role: 'Marketing Director',
+      'The consultant stayed in touch from first call through my probation. They genuinely cared about my career, not just filling a vacancy. That level of attention is rare in recruitment.',
+    name: 'Suresh Iyer',
+    role: 'Plant Manager, Auto OEM',
     type: 'candidate',
-    initials: 'MW',
-    color: '#1A3A6B',
+    initials: 'SI',
+    color: '#004bb2',
   },
 ];
 

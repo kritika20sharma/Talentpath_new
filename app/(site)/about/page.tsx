@@ -2,73 +2,35 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About Us | myhr Recruitment',
+  title: 'About Us | TalentPath Management Services',
   description:
-    'myhr is a women-led specialist recruitment agency with 15+ years of experience connecting exceptional talent with remarkable organisations across Australia.',
+    'TalentPath is a modern recruitment and talent acquisition company based in Noida, India — specialising in Lateral Hiring, Executive Search and Managed Recruitment across 9 industries.',
 };
-
-const team = [
-  {
-    name: 'Sarah Mitchell',
-    role: 'Founder & CEO',
-    bio: '20 years in recruitment across Asia-Pacific. Passionate about building workplaces where everyone thrives.',
-    initials: 'SM',
-    color: 'var(--navy)',
-  },
-  {
-    name: 'Olivia Chen',
-    role: 'Head of Technology',
-    bio: 'Former software engineer turned recruiter. Speaks the language of developers and CTOs alike.',
-    initials: 'OC',
-    color: 'var(--orange)',
-  },
-  {
-    name: 'Daniel Reeves',
-    role: 'Head of Finance',
-    bio: 'CPA background with a decade placing CFOs, controllers and finance teams across ASX companies.',
-    initials: 'DR',
-    color: '#1A3A6B',
-  },
-  {
-    name: 'Amara Osei',
-    role: 'Head of People & Culture',
-    bio: 'Champion of inclusive hiring practices with deep expertise in HR leadership and L&D recruitment.',
-    initials: 'AO',
-    color: 'var(--orange)',
-  },
-  {
-    name: 'Ryan Park',
-    role: 'Head of Sales & Marketing',
-    bio: 'From BDMs to CMOs — Ryan has placed hundreds of commercial leaders across tech and consumer brands.',
-    initials: 'RP',
-    color: 'var(--navy)',
-  },
-  {
-    name: 'Jessica Moore',
-    role: 'Head of Executive Search',
-    bio: 'Board-level advisor with a global network built over 15 years of C-suite and NED placements.',
-    initials: 'JM',
-    color: '#1A3A6B',
-  },
-];
 
 const values = [
   {
-    title: 'People first, always',
-    body: 'Every decision we make — for candidates and clients — starts with the human impact. We never forget that behind every role is a person\'s livelihood and a team\'s future.',
+    title: 'Trustworthy & Transparent',
+    body: 'Every engagement is built on openness and accountability. We say what we mean, do what we promise, and stand behind every placement we make.',
   },
   {
-    title: 'Radical honesty',
-    body: 'We tell clients when a role brief needs rethinking. We tell candidates when they\'re not the right fit. Trust is built on truth, not on telling people what they want to hear.',
+    title: 'People First, Always',
+    body: 'Behind every role is a person\'s livelihood and a team\'s future. We never forget that — for candidates and clients alike.',
   },
   {
-    title: 'Diversity without compromise',
-    body: 'Inclusive hiring isn\'t a box we tick — it\'s baked into our process. We challenge unconscious bias, broaden candidate slates, and advocate for equitable workplaces.',
+    title: 'Industry-Specific Expertise',
+    body: 'Our consultants are specialists, not generalists. Each vertical is owned by a consultant who lives and breathes that sector every day.',
   },
   {
-    title: 'Accountability at every step',
-    body: 'We own our outcomes. If a placement isn\'t working, we engage. We don\'t disappear after the offer letter — we\'re partners for the long term.',
+    title: 'Best Turn-Around Time',
+    body: 'Speed is our competitive edge. Our structured search process delivers quality shortlists faster than the market — without cutting corners on due diligence.',
   },
+];
+
+const milestones = [
+  { value: '9+', label: 'Specialist industries served' },
+  { value: '500+', label: 'Successful placements' },
+  { value: '200+', label: 'Client organisations' },
+  { value: '24/7', label: 'Consultant availability' },
 ];
 
 export default function AboutPage() {
@@ -77,25 +39,25 @@ export default function AboutPage() {
       {/* Hero */}
       <section
         className="pt-36 pb-20"
-        style={{ background: 'linear-gradient(135deg, #0F2B50 0%, #1A3A6B 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #004bb2 0%, #1a63d4 100%)' }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <span className="text-xs font-bold uppercase tracking-widest mb-4 block" style={{ color: 'var(--orange)' }}>
-            About myhr
+            About TalentPath
           </span>
           <h1 className="text-5xl lg:text-6xl font-black text-white leading-tight mb-6 max-w-3xl">
-            15 years of putting people first.
+            Connecting India&apos;s best talent with organisations that deserve them.
           </h1>
           <p className="text-xl text-white/70 max-w-2xl">
-            myhr was founded on a simple belief: recruitment done with genuine care for people
-            produces better outcomes for everyone. Clients, candidates, and the communities they work in.
+            TalentPath Management Services is a specialist recruitment partner headquartered in Noida —
+            built on the belief that great hiring is a human endeavour, not a transactional one.
           </p>
         </div>
       </section>
 
-      {/* Story */}
+      {/* Vision & Mission */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
               Our Story
@@ -105,30 +67,40 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-4 text-base leading-relaxed" style={{ color: 'var(--text-mid)' }}>
               <p>
-                myhr was founded in 2010 by Sarah Mitchell, following 10 years working inside large
-                recruitment conglomerates where the pressure to fill roles fast consistently
-                undermined the quality of outcomes for candidates and clients alike.
+                TalentPath was founded with a clear purpose: to bring genuine expertise, speed and
+                integrity to the recruitment process across India&apos;s most demanding sectors.
               </p>
               <p>
-                Sarah set out to build something different — a specialist agency where every
-                consultant had genuine expertise in their field, every candidate was treated with
-                dignity, and every placement was backed by honest advice rather than commission
-                incentives.
+                We saw an industry dominated by volume-over-quality approaches — agencies sending
+                dozens of unvetted CVs and calling it service. We set out to do the opposite: to
+                understand each role deeply, build trusted relationships, and present only the
+                candidates who truly fit.
               </p>
               <p>
-                Today myhr employs 45 specialist consultants across 8 divisions, and has proudly
-                placed over 4,200 professionals with organisations ranging from ASX-listed enterprises
-                to purpose-driven start-ups.
+                Today, TalentPath operates across 9 specialist verticals — from Automobile and
+                Oil &amp; Gas to BFSI and Pharma — serving mid-level professionals to C-suite
+                executives, with the same care at every level.
+              </p>
+            </div>
+
+            <div className="mt-8 p-6 rounded-2xl" style={{ backgroundColor: 'var(--light-bg)' }}>
+              <p className="text-sm font-bold mb-1" style={{ color: 'var(--navy)' }}>Our Vision</p>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-mid)' }}>
+                To be India&apos;s most trusted specialist recruitment partner — known for precision,
+                speed and genuine care for both clients and candidates.
+              </p>
+            </div>
+            <div className="mt-4 p-6 rounded-2xl" style={{ backgroundColor: 'var(--light-bg)' }}>
+              <p className="text-sm font-bold mb-1" style={{ color: 'var(--navy)' }}>Our Mission</p>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-mid)' }}>
+                To unlock human potential by connecting the right people with the right opportunities —
+                empowering organisations to grow and individuals to thrive.
               </p>
             </div>
           </div>
+
           <div className="grid grid-cols-2 gap-4">
-            {[
-              { value: '2010', label: 'Founded' },
-              { value: '45+', label: 'Specialist consultants' },
-              { value: '4,200+', label: 'Placements made' },
-              { value: '98%', label: 'Client retention rate' },
-            ].map((item, i) => (
+            {milestones.map((item, i) => (
               <div
                 key={i}
                 className="rounded-2xl p-8 text-center"
@@ -171,7 +143,7 @@ export default function AboutPage() {
                   className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm mb-5"
                   style={{ backgroundColor: 'var(--orange)' }}
                 >
-                  {i + 1}
+                  0{i + 1}
                 </div>
                 <h3 className="font-bold text-base mb-3" style={{ color: 'var(--navy)' }}>
                   {value.title}
@@ -185,57 +157,36 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Team placeholder */}
       <section id="team" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
-              Meet the Team
+              Our Team
             </span>
             <h2 className="text-4xl font-black" style={{ color: 'var(--navy)' }}>
               The people behind your next hire.
             </h2>
+            <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: 'var(--text-mid)' }}>
+              Our consultants are specialists in their industries — not generalists handing out CVs.
+              Each one brings deep sector knowledge and a genuine network built over years.
+            </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {team.map((member, i) => (
-              <div
-                key={i}
-                className="rounded-2xl p-7 flex flex-col"
-                style={{ backgroundColor: 'var(--light-bg)' }}
-              >
-                <div className="flex items-center gap-4 mb-5">
-                  <div
-                    className="w-14 h-14 rounded-full flex items-center justify-center text-white font-black text-lg flex-shrink-0"
-                    style={{ backgroundColor: member.color }}
-                  >
-                    {member.initials}
-                  </div>
-                  <div>
-                    <div className="font-bold text-base" style={{ color: 'var(--navy)' }}>
-                      {member.name}
-                    </div>
-                    <div className="text-xs font-semibold" style={{ color: 'var(--orange)' }}>
-                      {member.role}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-sm leading-relaxed" style={{ color: 'var(--text-mid)' }}>
-                  {member.bio}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Acknowledgement */}
-      <section className="py-10" style={{ backgroundColor: 'var(--cream)' }}>
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-sm leading-relaxed" style={{ color: 'var(--text-mid)' }}>
-            myhr acknowledges the Traditional Custodians of Country throughout Australia and their
-            connections to land, sea and community. We pay our respect to their Elders past and
-            present and extend that respect to all Aboriginal and Torres Strait Islander peoples.
-          </p>
+          <div className="rounded-2xl p-10 text-center" style={{ backgroundColor: 'var(--light-bg)' }}>
+            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'var(--navy)' }}>
+              <svg className="w-8 h-8" fill="none" stroke="white" strokeWidth="1.8" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--navy)' }}>Team profiles coming soon</h3>
+            <p className="text-sm" style={{ color: 'var(--text-mid)' }}>
+              We&apos;re updating our team section — check back shortly. In the meantime, reach out directly at{' '}
+              <a href="mailto:career@talentpath.co.in" className="font-semibold" style={{ color: 'var(--orange)' }}>
+                career@talentpath.co.in
+              </a>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -244,7 +195,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-black text-white mb-4">Ready to work with us?</h2>
           <p className="text-white/65 mb-8">
-            Whether you&apos;re hiring or job seeking, we&apos;d love to hear from you.
+            Whether you&apos;re hiring or looking for your next opportunity, we&apos;d love to hear from you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -256,7 +207,7 @@ export default function AboutPage() {
             </Link>
             <Link
               href="/jobs"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-bold border-2 text-white transition-all hover:bg-white hover:text-navy"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-bold border-2 text-white transition-all hover:bg-white/10"
               style={{ borderColor: 'rgba(255,255,255,0.3)' }}
             >
               Browse jobs
