@@ -6,7 +6,7 @@ export default function Newsletter() {
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState('');
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (email) setSubmitted(true);
   }
@@ -21,13 +21,13 @@ export default function Newsletter() {
           Stay Informed
         </span>
         <h2 className="text-3xl lg:text-4xl font-black text-white mb-4">
-          Get the 2026 Talent Guide.
+          Connecting Talent,
           <br />
-          <span style={{ color: 'var(--orange)' }}>Free.</span>
+          <span style={{ color: 'var(--orange)' }}>Creating Futures.</span>
         </h2>
         <p className="text-base mb-10" style={{ color: 'rgba(255,255,255,0.65)' }}>
-          Salary benchmarks, hiring trends, and workforce planning insights — delivered straight to
-          your inbox. Unsubscribe any time.
+          Get hiring insights, salary benchmarks and industry trends from TalentPath experts —
+          delivered to your inbox. Unsubscribe any time.
         </p>
 
         {submitted ? (

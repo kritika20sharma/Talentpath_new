@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({
-  variable: '--font-inter',
+const poppins = Poppins({
+  variable: '--font-poppins',
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'TalentPath — Unlock Potential, Empower People.',
+  title: 'TalentPath — Connecting Talent, Creating Futures.',
   description:
     'TalentPath Management Services offers Lateral Hiring, Executive Search and Managed Recruitment (RPO) across 9 industries. Based in Noida, serving clients globally.',
   keywords: [
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     'talent management services',
   ],
   openGraph: {
-    title: 'TalentPath — Unlock Potential, Empower People.',
+    title: 'TalentPath — Connecting Talent, Creating Futures.',
     description: 'Lateral Hiring, Executive Search and Managed Recruitment across 9 industries. Noida-based, globally connected.',
     type: 'website',
     url: 'https://talentpath.co.in',
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${poppins.variable} antialiased`}>
         {children}
       </body>
     </html>
