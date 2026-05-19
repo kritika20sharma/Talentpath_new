@@ -7,7 +7,6 @@ import { motion } from 'framer-motion';
 const videos = [
   '/videos/manufacturing.mp4',
   '/videos/warehouse.mp4',
-  '/videos/it.mp4',
   '/videos/meeting.mp4',
   '/videos/pharma.mp4',
   '/videos/electronics.mp4',
@@ -66,7 +65,7 @@ export default function Hero() {
   const currentVideoIdx = foreground === 'A' ? indexA : indexB;
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden" style={{ paddingTop: '96px' }}>
+    <section className="relative min-h-screen flex flex-col overflow-hidden">
 
       {/* Slot A */}
       <video
@@ -98,11 +97,13 @@ export default function Hero() {
         playsInline
       />
 
-      {/* Cinematic overlay — lighter at top, denser at bottom for readability */}
+      {/* Cinematic overlay — very light at top (navbar area), builds density toward content */}
       <div
         className="absolute inset-0 z-10"
         style={{
-          background: 'linear-gradient(160deg, rgba(0,20,70,0.38) 0%, rgba(0,30,90,0.44) 55%, rgba(0,10,50,0.58) 100%)',
+          background: `
+            linear-gradient(to bottom, rgba(0,10,40,0.55) 0%, rgba(0,10,40,0.15) 18%, rgba(0,15,55,0.35) 55%, rgba(0,10,40,0.65) 100%)
+          `,
         }}
       />
 
@@ -119,7 +120,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col flex-1 max-w-7xl mx-auto px-6 lg:px-8 py-24">
+      <div className="relative z-20 flex flex-col flex-1 max-w-7xl mx-auto px-6 lg:px-8 pt-44 pb-24">
 
         <motion.div
           className="mb-6"
