@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import FadeUp from './FadeUp';
 
 const services = [
   {
@@ -49,7 +50,8 @@ export default function WhatWeDo() {
 
         <div className="grid sm:grid-cols-3 gap-6">
           {services.map((service, i) => (
-            <Link key={i} href={service.href} className="group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl" style={{ backgroundColor: 'var(--light-bg)' }}>
+            <FadeUp key={i} delay={i * 0.12}>
+              <Link href={service.href} className="group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col h-full" style={{ backgroundColor: 'var(--light-bg)' }}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-colors group-hover:bg-orange" style={{ backgroundColor: 'var(--navy)' }}>
                 <svg className="w-6 h-6" fill="none" stroke="white" strokeWidth={1.5} viewBox="0 0 24 24">
                   {service.icon}
@@ -66,6 +68,7 @@ export default function WhatWeDo() {
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </div>
             </Link>
+            </FadeUp>
           ))}
         </div>
       </div>

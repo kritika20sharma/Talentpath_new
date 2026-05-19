@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const desktopVideos = ['/videos/v1.mp4', '/videos/v2.mp4', '/videos/v3.mp4', '/videos/v4.mp4'];
 const mobileVideos = ['/videos/v5.mp4', '/videos/v6.mp4'];
@@ -84,30 +85,57 @@ export default function Hero() {
       <div className="relative z-20 flex flex-col flex-1 max-w-7xl mx-auto px-6 lg:px-8 py-24">
 
         {/* Tag */}
-        <div className="mb-6">
+        <motion.div
+          className="mb-6"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest" style={{ backgroundColor: 'var(--orange)', color: 'white' }}>
             India&apos;s Specialist Recruitment Partner
           </span>
-        </div>
+        </motion.div>
 
         {/* Headline */}
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.08] mb-6 max-w-4xl">
+        <motion.h1
+          className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.08] mb-6 max-w-4xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           Find the Right Talent,
           <br />
           <span style={{ color: 'var(--orange)' }}>Build a Better Future.</span>
-        </h1>
+        </motion.h1>
 
         {/* Tagline */}
-        <p className="text-xl font-semibold mb-3" style={{ color: 'rgba(255,255,255,0.90)' }}>
+        <motion.p
+          className="text-xl font-semibold mb-3"
+          style={{ color: 'rgba(255,255,255,0.90)' }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           Unlock Potential, Empower People.
-        </p>
-        <p className="text-base max-w-xl mb-14 leading-relaxed" style={{ color: 'rgba(255,255,255,0.60)' }}>
+        </motion.p>
+        <motion.p
+          className="text-base max-w-xl mb-14 leading-relaxed"
+          style={{ color: 'rgba(255,255,255,0.60)' }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           TalentPath delivers Lateral Hiring, Executive Search and Managed Recruitment Services
           across 9 specialist industries — with precision, speed and genuine care.
-        </p>
+        </motion.p>
 
         {/* Dual CTA */}
-        <div className="grid sm:grid-cols-2 gap-5 max-w-2xl">
+        <motion.div
+          className="grid sm:grid-cols-2 gap-5 max-w-2xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           {/* Employers */}
           <div className="group rounded-2xl p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl" style={{ backgroundColor: 'var(--orange)' }}>
             <div className="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center mb-4">
@@ -128,8 +156,8 @@ export default function Hero() {
           </div>
 
           {/* Job seekers */}
-          <div className="group rounded-2xl p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl border border-white/20" style={{ backgroundColor: 'rgba(255,255,255,0.10)', backdropFilter: 'blur(12px)' }}>
-            <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: 'rgba(222,132,15,0.35)' }}>
+          <div className="group rounded-2xl p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl" style={{ backgroundColor: '#004bb2' }}>
+            <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}>
               <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
                 <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
               </svg>
@@ -145,10 +173,15 @@ export default function Hero() {
               </svg>
             </Link>
           </div>
-        </div>
+        </motion.div>
 
         {/* Trust badges */}
-        <div className="mt-14 pt-8 border-t border-white/15 flex flex-wrap gap-8 items-center">
+        <motion.div
+          className="mt-14 pt-8 border-t border-white/15 flex flex-wrap gap-8 items-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.75 }}
+        >
           {['Trustworthy & Reliable', 'Industry-Specific Experts', 'Best Turn-Around Time', '24/7 Support'].map((badge) => (
             <div key={badge} className="flex items-center gap-2">
               <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'var(--orange)' }}>
@@ -159,7 +192,7 @@ export default function Hero() {
               <span className="text-white/65 text-sm font-medium">{badge}</span>
             </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Video dot indicators */}
         <div className="mt-8 flex gap-2">

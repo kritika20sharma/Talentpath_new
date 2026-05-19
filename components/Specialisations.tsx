@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import FadeUp from './FadeUp';
 
 const industries = [
   { id: 'auto', title: 'Automobile & Automotive', roles: ['Plant Head', 'Quality Manager', 'R&D Engineer', 'Supply Chain Lead'], color: '#004bb2' },
@@ -31,25 +32,26 @@ export default function Specialisations() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {industries.map((ind) => (
-            <Link
-              key={ind.id}
-              href={`/specialisations#${ind.id}`}
-              className="group relative rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              style={{ backgroundColor: ind.color }}
-            >
-              <div className="absolute -right-8 -bottom-8 w-32 h-32 rounded-full opacity-10 group-hover:opacity-20 transition-opacity" style={{ backgroundColor: 'white' }} />
-              <h3 className="text-base font-bold text-white mb-3">{ind.title}</h3>
-              <ul className="space-y-1 mb-4">
-                {ind.roles.map((role) => (
-                  <li key={role} className="text-xs font-medium" style={{ color: 'rgba(255,255,255,0.65)' }}>{role}</li>
-                ))}
-              </ul>
-              <div className="flex items-center gap-1 text-xs font-bold text-white/80 group-hover:text-white transition-all group-hover:gap-2">
-                Explore roles
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </div>
-            </Link>
+          {industries.map((ind, i) => (
+            <FadeUp key={ind.id} delay={i * 0.07}>
+              <Link
+                href={`/specialisations#${ind.id}`}
+                className="group relative rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col h-full"
+                style={{ backgroundColor: ind.color }}
+              >
+                <div className="absolute -right-8 -bottom-8 w-32 h-32 rounded-full opacity-10 group-hover:opacity-20 transition-opacity" style={{ backgroundColor: 'white' }} />
+                <h3 className="text-base font-bold text-white mb-3">{ind.title}</h3>
+                <ul className="space-y-1 mb-4">
+                  {ind.roles.map((role) => (
+                    <li key={role} className="text-xs font-medium" style={{ color: 'rgba(255,255,255,0.65)' }}>{role}</li>
+                  ))}
+                </ul>
+                <div className="flex items-center gap-1 text-xs font-bold text-white/80 group-hover:text-white transition-all group-hover:gap-2">
+                  Explore roles
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </div>
+              </Link>
+            </FadeUp>
           ))}
         </div>
       </div>

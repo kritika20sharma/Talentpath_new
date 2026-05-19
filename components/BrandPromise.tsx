@@ -1,3 +1,5 @@
+import FadeUp from './FadeUp';
+
 const pillars = [
   {
     number: '01',
@@ -62,8 +64,9 @@ export default function BrandPromise() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {pillars.map((pillar) => (
-            <div key={pillar.number} className="rounded-2xl p-6 flex flex-col" style={{ backgroundColor: 'rgba(255,255,255,0.06)' }}>
+          {pillars.map((pillar, i) => (
+            <FadeUp key={pillar.number} delay={i * 0.1}>
+            <div className="rounded-2xl p-6 flex flex-col h-full" style={{ backgroundColor: 'rgba(255,255,255,0.06)' }}>
               {/* Icon */}
               <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: 'var(--orange)' }}>
                 <svg className="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24">
@@ -78,6 +81,7 @@ export default function BrandPromise() {
                 {pillar.body}
               </p>
             </div>
+            </FadeUp>
           ))}
         </div>
       </div>
