@@ -149,7 +149,8 @@ export default function AboutPage() {
                   src="/images/founder-female.jpg"
                   alt="Mamta Saharan — CEO & Co-Founder"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover"
+                  style={{ objectPosition: 'center 20%' }}
                 />
                 <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,75,178,0.6) 0%, transparent 50%)' }} />
                 <div className="absolute bottom-5 left-6 right-6">
