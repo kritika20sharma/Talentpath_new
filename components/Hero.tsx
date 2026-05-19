@@ -4,8 +4,16 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-const desktopVideos = ['/videos/v1.mp4', '/videos/v2.mp4', '/videos/v3.mp4', '/videos/v4.mp4'];
-const mobileVideos = ['/videos/v5.mp4', '/videos/v6.mp4'];
+const desktopVideos = [
+  '/videos/manufacturing.mp4',
+  '/videos/warehouse.mp4',
+  '/videos/it.mp4',
+  '/videos/meeting.mp4',
+  '/videos/pharma.mp4',
+  '/videos/electronics.mp4',
+  '/videos/fashion.mp4',
+];
+const mobileVideos = ['/videos/meeting.mp4', '/videos/pharma.mp4'];
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
