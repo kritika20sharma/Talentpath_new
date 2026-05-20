@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import FounderPhotoUpload from '@/components/FounderPhotoUpload';
 
 export const metadata: Metadata = {
   title: 'About Us | TalentPath Management Services',
@@ -143,41 +144,30 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-8">
 
             {/* Mamta Saharan */}
-            <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
-              <div className="relative h-80 w-full overflow-hidden" style={{ backgroundColor: 'var(--light-bg)' }}>
-                <Image
-                  src="/images/founder-female.jpg"
-                  alt="Mamta Saharan — CEO & Co-Founder"
-                  fill
-                  className="object-cover object-top"
-                />
-                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,75,178,0.6) 0%, transparent 50%)' }} />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <p className="text-white font-black text-2xl leading-tight">Mamta Saharan</p>
-                  <span
-                    className="inline-block mt-1 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
-                    style={{ backgroundColor: 'var(--orange)', color: 'white' }}
-                  >
-                    CEO &amp; Co-Founder
-                  </span>
-                </div>
-              </div>
-              <div className="p-7">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="h-0.5 w-8 rounded-full" style={{ backgroundColor: 'var(--orange)' }} />
+            <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
+              <FounderPhotoUpload
+                src="/images/founder-female.jpg"
+                alt="Mamta Saharan — CEO & Co-Founder"
+                name="Mamta Saharan"
+                title="CEO & Co-Founder"
+                slot="female"
+              />
+              <div className="p-8 flex flex-col gap-4">
+                <div className="flex items-center gap-2">
+                  <div className="h-0.5 w-8 rounded-full flex-shrink-0" style={{ backgroundColor: 'var(--orange)' }} />
                   <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--orange)' }}>About Mamta</span>
                 </div>
-                <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-mid)' }}>
+                <p className="text-sm leading-7" style={{ color: 'var(--text-mid)' }}>
                   A graduate of Delhi University, Mamta holds a Master&apos;s degree in Management
                   from Maharshi Dayanand University, Rohtak (Haryana).
                 </p>
-                <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-mid)' }}>
+                <p className="text-sm leading-7" style={{ color: 'var(--text-mid)' }}>
                   As Co-Founder &amp; CEO, Mamta is a core member of TalentPath&apos;s Management
                   Committee. She drives the firm&apos;s recruitment strategy across the Automotive
                   vertical, combining sharp client understanding with deep operational expertise to
                   consistently deliver quality talent at speed.
                 </p>
-                <p className="text-sm leading-relaxed" style={{ color: 'var(--text-mid)' }}>
+                <p className="text-sm leading-7" style={{ color: 'var(--text-mid)' }}>
                   With <strong style={{ color: 'var(--navy)' }}>15+ years of experience</strong>, she
                   has built a strong track record of hiring across Indian companies and MNCs spanning
                   multiple domains and functions. Her expertise covers Leadership Hiring, Plant Hiring,
@@ -188,41 +178,30 @@ export default function AboutPage() {
             </div>
 
             {/* Madhukar Mishra */}
-            <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
-              <div className="relative h-80 w-full overflow-hidden" style={{ backgroundColor: 'var(--light-bg)' }}>
-                <Image
-                  src="/images/founder-male.jpg"
-                  alt="Madhukar Mishra — CEO & Co-Founder"
-                  fill
-                  className="object-cover object-top"
-                />
-                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,75,178,0.6) 0%, transparent 50%)' }} />
-                <div className="absolute bottom-5 left-6 right-6">
-                  <p className="text-white font-black text-2xl leading-tight">Madhukar Mishra</p>
-                  <span
-                    className="inline-block mt-1 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
-                    style={{ backgroundColor: 'var(--orange)', color: 'white' }}
-                  >
-                    CEO &amp; Co-Founder
-                  </span>
-                </div>
-              </div>
-              <div className="p-7">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="h-0.5 w-8 rounded-full" style={{ backgroundColor: 'var(--orange)' }} />
+            <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
+              <FounderPhotoUpload
+                src="/images/founder-male.jpg"
+                alt="Madhukar Mishra — CEO & Co-Founder"
+                name="Madhukar Mishra"
+                title="CEO & Co-Founder"
+                slot="male"
+              />
+              <div className="p-8 flex flex-col gap-4">
+                <div className="flex items-center gap-2">
+                  <div className="h-0.5 w-8 rounded-full flex-shrink-0" style={{ backgroundColor: 'var(--orange)' }} />
                   <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--orange)' }}>About Madhukar</span>
                 </div>
-                <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-mid)' }}>
+                <p className="text-sm leading-7" style={{ color: 'var(--text-mid)' }}>
                   A graduate of Magadh University, Madhukar holds a Master&apos;s degree from the
                   Institute of Management Technology, Ghaziabad (UP).
                 </p>
-                <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-mid)' }}>
+                <p className="text-sm leading-7" style={{ color: 'var(--text-mid)' }}>
                   As Co-Founder &amp; CEO, Madhukar is a core member of TalentPath&apos;s Management
                   Committee. He oversees the firm&apos;s P&amp;L and steers its core recruitment
                   business across multiple industry verticals — bringing strategic clarity and
                   commercial discipline to every client engagement.
                 </p>
-                <p className="text-sm leading-relaxed" style={{ color: 'var(--text-mid)' }}>
+                <p className="text-sm leading-7" style={{ color: 'var(--text-mid)' }}>
                   With <strong style={{ color: 'var(--navy)' }}>22+ years of experience</strong>,
                   Madhukar has built an enviable reputation in Automobile, Manufacturing and
                   Non-Banking Financial Services. He has successfully placed senior executives across
