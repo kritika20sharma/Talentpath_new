@@ -24,20 +24,20 @@ const services = [
 
 export default function WhatWeDo() {
   return (
-    <section className="py-24" style={{ backgroundColor: 'white' }}>
+    <section className="py-16 sm:py-24" style={{ backgroundColor: 'white' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-end mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-end mb-10 sm:mb-16">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
               What We Do
             </span>
-            <h2 className="text-4xl lg:text-5xl font-black leading-tight" style={{ color: 'var(--navy)' }}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight" style={{ color: 'var(--navy)' }}>
               Three services.
               <br />One promise of precision.
             </h2>
           </div>
           <div>
-            <p className="text-lg leading-relaxed" style={{ color: 'var(--text-mid)' }}>
+            <p className="text-base sm:text-lg leading-relaxed" style={{ color: 'var(--text-mid)' }}>
               Whether you need a lateral specialist, a C-suite leader, or a fully managed hiring
               partner — TalentPath delivers talent that drives real business outcomes.
             </p>

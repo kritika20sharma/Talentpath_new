@@ -15,17 +15,17 @@ const industries = [
 
 export default function Specialisations() {
   return (
-    <section className="py-24" style={{ backgroundColor: 'var(--light-bg)' }}>
+    <section className="py-16 sm:py-24" style={{ backgroundColor: 'var(--light-bg)' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 sm:mb-14">
           <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
             Industries We Serve
           </span>
-          <h2 className="text-4xl lg:text-5xl font-black mb-5" style={{ color: 'var(--navy)' }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 sm:mb-5" style={{ color: 'var(--navy)' }}>
             Deep expertise across
             <br />9 specialist verticals.
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-mid)' }}>
+          <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-mid)' }}>
             Our consultants are embedded in their sectors — meaning faster shortlists, sharper
             candidate assessment, and talent that truly fits your context.
           </p>

@@ -39,17 +39,17 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24" style={{ backgroundColor: 'white' }}>
+    <section className="py-16 sm:py-24" style={{ backgroundColor: 'white' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 sm:mb-14">
           <span
             className="text-xs font-bold uppercase tracking-widest mb-3 block"
             style={{ color: 'var(--orange)' }}
           >
             What People Say
           </span>
-          <h2 className="text-4xl lg:text-5xl font-black" style={{ color: 'var(--navy)' }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black" style={{ color: 'var(--navy)' }}>
             Stories that speak
             <br />for themselves.
           </h2>
@@ -60,7 +60,7 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="rounded-2xl p-8 flex flex-col"
+              className="rounded-2xl p-6 sm:p-8 flex flex-col"
               style={{ backgroundColor: 'var(--light-bg)' }}
             >
               {/* Stars */}

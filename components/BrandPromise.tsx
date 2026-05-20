@@ -41,22 +41,22 @@ const pillars = [
 
 export default function BrandPromise() {
   return (
-    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: 'var(--navy)' }}>
+    <section className="py-16 sm:py-24 relative overflow-hidden" style={{ backgroundColor: 'var(--navy)' }}>
       <div className="absolute right-0 top-0 w-1/2 h-full opacity-5"
         style={{ backgroundImage: 'radial-gradient(circle at 70% 50%, white 0%, transparent 70%)' }} />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start mb-12 sm:mb-16">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
               Why TalentPath
             </span>
-            <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
               What sets us apart.
             </h2>
           </div>
           <div className="lg:pt-12">
-            <p className="text-lg leading-relaxed font-medium" style={{ color: 'rgba(255,255,255,0.65)' }}>
+            <p className="text-base sm:text-lg leading-relaxed font-medium" style={{ color: 'rgba(255,255,255,0.65)' }}>
               We help organisations tackle their most critical talent challenges — with innovation,
               commitment, and genuine accountability at every step.
             </p>

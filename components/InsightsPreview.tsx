@@ -32,10 +32,10 @@ const posts = [
 
 export default function InsightsPreview() {
   return (
-    <section className="py-24" style={{ backgroundColor: 'var(--cream)' }}>
+    <section className="py-16 sm:py-24" style={{ backgroundColor: 'var(--cream)' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-12">
           <div>
             <span
               className="text-xs font-bold uppercase tracking-widest mb-3 block"
@@ -43,7 +43,7 @@ export default function InsightsPreview() {
             >
               Insights
             </span>
-            <h2 className="text-4xl font-black" style={{ color: 'var(--navy)' }}>
+            <h2 className="text-3xl sm:text-4xl font-black" style={{ color: 'var(--navy)' }}>
               Stay ahead of
               <br />the market.
             </h2>
@@ -70,7 +70,7 @@ export default function InsightsPreview() {
               {/* Colour bar */}
               <div className="h-1.5" style={{ backgroundColor: post.color }} />
 
-              <div className="flex flex-col flex-1 p-7">
+              <div className="flex flex-col flex-1 p-5 sm:p-7">
                 {/* Meta */}
                 <div className="flex items-center gap-3 mb-4">
                   <span

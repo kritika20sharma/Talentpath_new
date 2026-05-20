@@ -120,7 +120,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col flex-1 max-w-7xl mx-auto px-6 lg:px-8 pt-44 pb-24">
+      <div className="relative z-20 flex flex-col flex-1 max-w-7xl mx-auto px-6 lg:px-8 pt-32 sm:pt-44 pb-16 sm:pb-24">
 
         <motion.div
           className="mb-6"
@@ -145,7 +145,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          className="text-xl font-semibold mb-3"
+          className="text-lg sm:text-xl font-semibold mb-2"
           style={{ color: 'rgba(255,255,255,0.90)' }}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -155,7 +155,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.p
-          className="text-base max-w-xl mb-14 leading-relaxed"
+          className="text-sm sm:text-base max-w-xl mb-8 sm:mb-14 leading-relaxed"
           style={{ color: 'rgba(255,255,255,0.60)' }}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -167,13 +167,13 @@ export default function Hero() {
 
         {/* Dual CTA */}
         <motion.div
-          className="grid sm:grid-cols-2 gap-5 max-w-2xl"
+          className="grid sm:grid-cols-2 gap-4 max-w-2xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           {/* Employers */}
-          <div className="group rounded-2xl p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl" style={{ backgroundColor: 'var(--orange)' }}>
+          <div className="group rounded-2xl p-5 sm:p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl" style={{ backgroundColor: 'var(--orange)' }}>
             <div className="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center mb-4">
               <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
                 <path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM4 5h16V4a1 1 0 00-1-1H5a1 1 0 00-1 1v1z" />
@@ -192,7 +192,7 @@ export default function Hero() {
           </div>
 
           {/* Job seekers */}
-          <div className="group rounded-2xl p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl" style={{ backgroundColor: '#004bb2' }}>
+          <div className="group rounded-2xl p-5 sm:p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl" style={{ backgroundColor: '#004bb2' }}>
             <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}>
               <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
                 <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
@@ -213,7 +213,7 @@ export default function Hero() {
 
         {/* Trust badges */}
         <motion.div
-          className="mt-14 pt-8 border-t border-white/15 flex flex-wrap gap-8 items-center"
+          className="mt-8 sm:mt-14 pt-6 sm:pt-8 border-t border-white/15 flex flex-wrap gap-x-5 gap-y-3 sm:gap-8 items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.75 }}

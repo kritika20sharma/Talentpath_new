@@ -40,17 +40,17 @@ export default function AboutPage() {
     <main>
       {/* Hero */}
       <section
-        className="pt-40 pb-20"
+        className="pt-28 pb-12 sm:pt-40 sm:pb-20"
         style={{ background: 'linear-gradient(135deg, #004bb2 0%, #1a63d4 100%)' }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <span className="text-xs font-bold uppercase tracking-widest mb-4 block" style={{ color: 'var(--orange)' }}>
             About TalentPath
           </span>
-          <h1 className="text-5xl lg:text-6xl font-black text-white leading-tight mb-6 max-w-3xl">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4 sm:mb-6 max-w-3xl">
             Connecting India&apos;s best talent with organisations that deserve them.
           </h1>
-          <p className="text-xl text-white/70 max-w-2xl">
+          <p className="text-base sm:text-xl text-white/70 max-w-2xl">
             TalentPath Management Services is a specialist recruitment partner headquartered in Noida —
             built on the belief that great hiring is a human endeavour, not a transactional one.
           </p>
@@ -58,13 +58,13 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-24 bg-white">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
               Our Story
             </span>
-            <h2 className="text-4xl font-black mb-6" style={{ color: 'var(--navy)' }}>
+            <h2 className="text-3xl sm:text-4xl font-black mb-4 sm:mb-6" style={{ color: 'var(--navy)' }}>
               Born from a frustration with transactional recruitment.
             </h2>
             <div className="space-y-4 text-base leading-relaxed" style={{ color: 'var(--text-mid)' }}>
@@ -105,11 +105,11 @@ export default function AboutPage() {
             {milestones.map((item, i) => (
               <div
                 key={i}
-                className="rounded-2xl p-8 text-center"
+                className="rounded-2xl p-5 sm:p-8 text-center"
                 style={{ backgroundColor: i % 2 === 0 ? 'var(--navy)' : 'var(--light-bg)' }}
               >
                 <span
-                  className="text-4xl font-black block mb-2"
+                  className="text-3xl sm:text-4xl font-black block mb-2"
                   style={{ color: i % 2 === 0 ? 'var(--orange)' : 'var(--navy)' }}
                 >
                   {item.value}
@@ -127,13 +127,13 @@ export default function AboutPage() {
       </section>
 
       {/* Co-Founders */}
-      <section className="py-24" style={{ backgroundColor: 'var(--light-bg)' }}>
+      <section className="py-16 sm:py-24" style={{ backgroundColor: 'var(--light-bg)' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 sm:mb-16">
             <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
               Leadership
             </span>
-            <h2 className="text-4xl font-black" style={{ color: 'var(--navy)' }}>
+            <h2 className="text-3xl sm:text-4xl font-black" style={{ color: 'var(--navy)' }}>
               Meet the Co-Founders
             </h2>
             <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: 'var(--text-mid)' }}>
@@ -215,13 +215,13 @@ export default function AboutPage() {
       </section>
 
       {/* Team Photo */}
-      <section className="py-24 bg-white">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
               Our Team
             </span>
-            <h2 className="text-4xl font-black" style={{ color: 'var(--navy)' }}>
+            <h2 className="text-3xl sm:text-4xl font-black" style={{ color: 'var(--navy)' }}>
               The people behind your next hire.
             </h2>
             <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: 'var(--text-mid)' }}>
@@ -253,13 +253,13 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-24" style={{ backgroundColor: 'var(--light-bg)' }}>
+      <section className="py-16 sm:py-24" style={{ backgroundColor: 'var(--light-bg)' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
               What We Stand For
             </span>
-            <h2 className="text-4xl font-black" style={{ color: 'var(--navy)' }}>
+            <h2 className="text-3xl sm:text-4xl font-black" style={{ color: 'var(--navy)' }}>
               Our values aren&apos;t on a wall.
               <br />They&apos;re in every conversation.
             </h2>
@@ -286,9 +286,9 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20" style={{ backgroundColor: 'var(--navy)' }}>
+      <section className="py-14 sm:py-20" style={{ backgroundColor: 'var(--navy)' }}>
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-black text-white mb-4">Ready to work with us?</h2>
+          <h2 className="text-2xl sm:text-3xl font-black text-white mb-3 sm:mb-4">Ready to work with us?</h2>
           <p className="text-white/65 mb-8">
             Whether you&apos;re hiring or looking for your next opportunity, we&apos;d love to hear from you.
           </p>
