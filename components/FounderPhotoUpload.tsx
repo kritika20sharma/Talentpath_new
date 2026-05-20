@@ -32,28 +32,28 @@ export default function FounderPhotoUpload({ src, alt, name, title, slot }: Prop
       style={{ aspectRatio: '4 / 3' }}
       onClick={() => inputRef.current?.click()}
     >
-      {/* Photo with subtle scale on hover */}
+      {/* Photo — face centered at 25% from top, subtle hover scale */}
       <Image
         key={imgSrc}
         src={imgSrc}
         alt={alt}
         fill
-        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-        style={{ objectPosition: 'center top' }}
+        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        style={{ objectPosition: 'center 20%' }}
         sizes="(max-width: 1024px) 100vw, 50vw"
       />
 
-      {/* Soft cinematic gradient — covers only bottom 28% */}
+      {/* Feathered bottom gradient — readability only, doesn't reach face */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'linear-gradient(to top, rgba(10,20,40,0.55) 0%, transparent 52%)',
+          background: 'linear-gradient(to top, rgba(8,18,38,0.72) 0%, rgba(8,18,38,0.18) 32%, transparent 55%)',
         }}
       />
 
-      {/* Name + badge — sits just above the bottom edge */}
-      <div className="absolute bottom-0 left-0 right-0 px-6 pb-5 pt-10">
-        <p className="text-white font-black text-xl leading-tight tracking-tight drop-shadow">{name}</p>
+      {/* Name + badge pinned cleanly to bottom-left */}
+      <div className="absolute bottom-0 left-0 right-0 px-5 sm:px-6 pb-4 sm:pb-5">
+        <p className="text-white font-black text-lg sm:text-xl leading-tight tracking-tight drop-shadow">{name}</p>
         <span
           className="inline-block mt-1.5 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
           style={{ backgroundColor: 'var(--orange)', color: 'white' }}
