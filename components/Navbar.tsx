@@ -35,22 +35,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'}`}>
 
-          {/* Logo — sits in a crisp white pill when navbar is transparent */}
+          {/* Logo */}
           <Link href="/" className="flex-shrink-0 transition-transform duration-200 hover:scale-[1.03]">
-            <div
-              className={`transition-all duration-300 rounded-xl ${
-                !scrolled ? 'bg-white/95 px-3 py-1.5 shadow-sm' : ''
-              }`}
-            >
-              <Image
-                src="/logo.png"
-                alt="TalentPath"
-                width={200}
-                height={80}
-                className={`w-auto transition-all duration-300 ${scrolled ? 'h-14' : 'h-12'}`}
-                priority
-              />
-            </div>
+            <Image
+              src="/logo.png"
+              alt="TalentPath"
+              width={480}
+              height={192}
+              className={`w-auto transition-all duration-300 ${scrolled ? 'h-32' : 'h-28'}`}
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}
