@@ -168,21 +168,21 @@ export default function AboutPage() {
                   <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--orange)' }}>About Mamta</span>
                 </div>
                 <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-mid)' }}>
-                  Graduated from Delhi University with a Master&apos;s degree in Management from Maharshi
-                  Dayanand University, Rohtak (Haryana).
+                  A graduate of Delhi University, Mamta holds a Master&apos;s degree in Management
+                  from Maharshi Dayanand University, Rohtak (Haryana).
                 </p>
                 <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-mid)' }}>
-                  Mamta is the Co-Founder &amp; Chief Executive Officer and part of the Management
-                  Committee of TalentPath Management Services. She leads the recruitment processes
-                  across the Automotive vertical.
+                  As Co-Founder &amp; CEO, Mamta is a core member of TalentPath&apos;s Management
+                  Committee. She drives the firm&apos;s recruitment strategy across the Automotive
+                  vertical, combining sharp client understanding with deep operational expertise to
+                  consistently deliver quality talent at speed.
                 </p>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--text-mid)' }}>
-                  With <strong style={{ color: 'var(--navy)' }}>8+ years of experience</strong> handling
-                  multiple clients, she is a practiced automotive industry consultant with a proven
-                  history of hiring for Indian MNCs across multi-domain functions — with deep
-                  expertise in Leadership Hiring, Plant Hiring, Manufacturing, Sales &amp; Marketing,
-                  R&amp;D across Passenger Cars, Two-wheelers, Tractors, Off-Road Vehicles, Engines
-                  and Heavy Machinery.
+                  With <strong style={{ color: 'var(--navy)' }}>15+ years of experience</strong>, she
+                  has built a strong track record of hiring across Indian companies and MNCs spanning
+                  multiple domains and functions. Her expertise covers Leadership Hiring, Plant Hiring,
+                  Manufacturing, Sales &amp; Marketing, and R&amp;D — across Passenger Cars,
+                  Two-wheelers, Tractors, Off-Road Vehicles, Engines and Heavy Machinery.
                 </p>
               </div>
             </div>
@@ -213,20 +213,21 @@ export default function AboutPage() {
                   <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--orange)' }}>About Madhukar</span>
                 </div>
                 <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-mid)' }}>
-                  A Magadh University graduate with a Master&apos;s degree from the Institute of
-                  Management Technology, Ghaziabad (UP).
+                  A graduate of Magadh University, Madhukar holds a Master&apos;s degree from the
+                  Institute of Management Technology, Ghaziabad (UP).
                 </p>
                 <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-mid)' }}>
-                  Madhukar is the Co-Founder &amp; Chief Executive Officer and part of the Management
-                  Committee of TalentPath Management Services. He leads the P&amp;L of the firm&apos;s
-                  core recruitment business across several industry verticals.
+                  As Co-Founder &amp; CEO, Madhukar is a core member of TalentPath&apos;s Management
+                  Committee. He oversees the firm&apos;s P&amp;L and steers its core recruitment
+                  business across multiple industry verticals — bringing strategic clarity and
+                  commercial discipline to every client engagement.
                 </p>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--text-mid)' }}>
-                  With an established reputation in Automobile, Manufacturing and Non-Banking
-                  Financial Services, Madhukar brings <strong style={{ color: 'var(--navy)' }}>15+ years
-                  of experience</strong> recruiting senior executives across Automobile, FMCG,
-                  Consumer Durables, EPC, Oil &amp; Gas, Banking, NBFC, Analytics &amp; Consulting —
-                  with leading organisations throughout India.
+                  With <strong style={{ color: 'var(--navy)' }}>22+ years of experience</strong>,
+                  Madhukar has built an enviable reputation in Automobile, Manufacturing and
+                  Non-Banking Financial Services. He has successfully placed senior executives across
+                  Automobile, FMCG, Consumer Durables, EPC, Oil &amp; Gas, Banking, NBFC, Analytics
+                  &amp; Consulting — with leading organisations throughout India.
                 </p>
               </div>
             </div>
