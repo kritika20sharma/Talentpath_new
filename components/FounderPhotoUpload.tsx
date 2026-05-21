@@ -29,7 +29,7 @@ export default function FounderPhotoUpload({ src, alt, name, title, slot }: Prop
   return (
     <div
       className="relative w-full overflow-hidden cursor-pointer group"
-      style={{ aspectRatio: '4 / 3' }}
+      style={{ aspectRatio: '5 / 4' }}
       onClick={() => inputRef.current?.click()}
     >
       {/* Photo — face centered at 25% from top, subtle hover scale */}
@@ -39,7 +39,7 @@ export default function FounderPhotoUpload({ src, alt, name, title, slot }: Prop
         alt={alt}
         fill
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-        style={{ objectPosition: 'center 20%' }}
+        style={{ objectPosition: 'center top' }}
         sizes="(max-width: 1024px) 100vw, 50vw"
       />
 
