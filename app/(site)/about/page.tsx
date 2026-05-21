@@ -41,7 +41,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section
         className="pt-28 pb-12 sm:pt-40 sm:pb-20"
-        style={{ background: 'linear-gradient(135deg, #004bb2 0%, #1a63d4 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #0F2B50 0%, #1A3A6B 100%)' }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <span className="text-xs font-bold uppercase tracking-widest mb-4 block" style={{ color: 'var(--orange)' }}>
