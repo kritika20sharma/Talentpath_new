@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TalentPath — Website Technology & Tools Document</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #1e293b;
+    background: #fff;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 48px 64px;
+  }
+
+  /* ── Header ── */
+  .doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px solid #de840f;
+    padding-bottom: 28px;
+    margin-bottom: 36px;
+  }
+  .brand { display: flex; align-items: baseline; gap: 1px; }
+  .brand-blue { font-size: 28px; font-weight: 900; color: #004bb2; letter-spacing: -0.5px; }
+  .brand-orange { font-size: 28px; font-weight: 900; color: #de840f; letter-spacing: -0.5px; }
+  .doc-title { font-size: 17px; font-weight: 800; color: #1e293b; margin-top: 6px; }
+  .doc-sub { font-size: 12px; color: #64748b; margin-top: 2px; }
+  .doc-meta { text-align: right; font-size: 11.5px; color: #64748b; line-height: 1.8; }
+  .doc-meta strong { color: #1e293b; }
+  .confidential {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: #fef3c7;
+    color: #92400e;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-top: 6px;
+  }
+
+  /* ── Intro ── */
+  .intro {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 36px;
+    font-size: 12.5px;
+    color: #475569;
+    line-height: 1.75;
+  }
+  .intro p + p { margin-top: 10px; }
+
+  /* ── Section ── */
+  .section { margin-bottom: 36px; page-break-inside: avoid; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .section-dot {
+    width: 10px; height: 10px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: #e2e8f0;
+  }
+
+  /* ── Table ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  thead th {
+    background: #f1f5f9;
+    font-weight: 700;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #64748b;
+    padding: 9px 14px;
+    text-align: left;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  tbody tr { border-bottom: 1px solid #f1f5f9; }
+  tbody tr:last-child { border-bottom: none; }
+  tbody td {
+    padding: 11px 14px;
+    vertical-align: top;
+    color: #334155;
+  }
+  .tool-name {
+    font-weight: 700;
+    color: #0f172a;
+    white-space: nowrap;
+  }
+  .tool-version {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    background: #f1f5f9;
+    color: #64748b;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-top: 3px;
+  }
+  .tool-role {
+    font-weight: 600;
+    color: #475569;
+  }
+
+  /* ── Summary cards ── */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .summary-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 12px;
+    text-align: center;
+  }
+  .summary-value {
+    font-size: 22px;
+    font-weight: 900;
+    color: #004bb2;
+    line-height: 1;
+  }
+  .summary-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #64748b;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── Hosting & deployment callout ── */
+  .callout {
+    background: #004bb2;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin-bottom: 36px;
+    color: white;
+    page-break-inside: avoid;
+  }
+  .callout-title {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 14px;
+  }
+  .callout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .callout h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .callout p { font-size: 12px; color: rgba(255,255,255,0.70); line-height: 1.65; }
+  .callout span { font-weight: 600; color: white; }
+
+  /* ── Notes ── */
+  .notes {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 36px;
+    page-break-inside: avoid;
+  }
+  .notes-title {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #c2410c;
+    margin-bottom: 10px;
+  }
+  .notes ul { padding-left: 16px; }
+  .notes li { margin-bottom: 6px; color: #7c2d12; font-size: 12px; line-height: 1.65; }
+
+  /* ── Footer ── */
+  .doc-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 18px;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 8px;
+  }
+
+  /* ── Print ── */
+  @media print {
+    @page { margin: 1.8cm; size: A4; }
+    body { padding: 0; max-width: 100%; }
+    .no-print { display: none !important; }
+    body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<div class="doc-header">
+  <div>
+    <div class="brand">
+      <span class="brand-blue">TALENT</span><span class="brand-orange">PATH</span>
+    </div>
+    <div class="doc-title">Website Technology &amp; Tools Document</div>
+    <div class="doc-sub">Complete reference of all software, platforms, and integrations used</div>
+  </div>
+  <div class="doc-meta">
+    <strong>TalentPath Management Services Pvt. Ltd.</strong><br>
+    talentpath.co.in<br>
+    Prepared: 14 June 2026<br>
+    Version 1.0<br>
+    <span class="confidential">Client Confidential</span>
+  </div>
+</div>
+
+<!-- ── INTRO ── -->
+<div class="intro">
+  <p>This document provides a complete inventory of all software frameworks, third-party platforms, developer tools, integrations, and external services used in the design, development, and operation of the TalentPath website. It is prepared for client records and internal documentation purposes.</p>
+  <p>This information is <strong>not displayed anywhere on the public website</strong> and is intended solely for TalentPath Management Services Pvt. Ltd. to maintain accurate records of the technical ecosystem underpinning their digital presence.</p>
+</div>
+
+<!-- ── SUMMARY ── -->
+<div class="summary-grid">
+  <div class="summary-card">
+    <div class="summary-value">7</div>
+    <div class="summary-label">Pages</div>
+  </div>
+  <div class="summary-card">
+    <div class="summary-value">15+</div>
+    <div class="summary-label">Components</div>
+  </div>
+  <div class="summary-card">
+    <div class="summary-value">9</div>
+    <div class="summary-label">Industries</div>
+  </div>
+  <div class="summary-card">
+    <div class="summary-value">CMS</div>
+    <div class="summary-label">Content Mgmt</div>
+  </div>
+  <div class="summary-card">
+    <div class="summary-value">100%</div>
+    <div class="summary-label">TypeScript</div>
+  </div>
+</div>
+
+<!-- ── SECTION 1: CORE FRAMEWORK ── -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-dot" style="background:#004bb2"></div>
+    <div class="section-title" style="color:#004bb2">1. Core Framework &amp; Language</div>
+    <div class="section-line"></div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:160px">Tool / Technology</th>
+        <th style="width:110px">Version</th>
+        <th style="width:160px">Role</th>
+        <th>Purpose &amp; How It Is Used</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="tool-name">Next.js</div>
+          <div class="tool-version">v16.1.4</div>
+        </td>
+        <td>16.1.4</td>
+        <td class="tool-role">Full-stack web framework</td>
+        <td>The core framework powering the entire website. Handles all page routing (Home, About, Industries, Services, Jobs, Blogs, Contact), server-side rendering for SEO, image optimisation, font loading, and API capabilities. Built using the modern App Router architecture.</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">React</div>
+          <div class="tool-version">v19.2.3</div>
+        </td>
+        <td>19.2.3</td>
+        <td class="tool-role">UI component library</td>
+        <td>Powers every interactive element — navigation bar, hero section, contact form, job cards, industry pages, and more — as reusable, composable components. React is the industry-standard library for building modern user interfaces.</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">TypeScript</div>
+          <div class="tool-version">v5.x</div>
+        </td>
+        <td>5.x</td>
+        <td class="tool-role">Programming language</td>
+        <td>A superset of JavaScript that adds strict type checking to all code. Reduces bugs at development time, makes the codebase easier to maintain, and ensures better long-term reliability. 100% of the website code is written in TypeScript.</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">Node.js</div>
+          <div class="tool-version">v22.x</div>
+        </td>
+        <td>22.x</td>
+        <td class="tool-role">JavaScript runtime</td>
+        <td>The server-side runtime environment required to build and run the Next.js application. Used during development and by the build pipeline. Not exposed to website visitors directly.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ── SECTION 2: STYLING & ANIMATION ── -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-dot" style="background:#de840f"></div>
+    <div class="section-title" style="color:#de840f">2. Styling &amp; Animation</div>
+    <div class="section-line"></div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:160px">Tool / Technology</th>
+        <th style="width:110px">Version</th>
+        <th style="width:160px">Role</th>
+        <th>Purpose &amp; How It Is Used</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="tool-name">Tailwind CSS</div>
+          <div class="tool-version">v4.x</div>
+        </td>
+        <td>4.x (via PostCSS)</td>
+        <td class="tool-role">CSS styling framework</td>
+        <td>Handles all visual design — layout, spacing, typography, colour, responsive breakpoints, hover effects, and dark mode readiness. All styling is applied as utility classes directly in component files. No separate custom CSS files are needed for standard UI.</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">Framer Motion</div>
+          <div class="tool-version">v12.39.x</div>
+        </td>
+        <td>12.39.0</td>
+        <td class="tool-role">Animation library</td>
+        <td>Powers all entrance animations (fade-in, slide-up), hover lift effects on cards, and staggered content reveals on the hero section, about page, and service cards. Provides a premium, polished feel to the UI without impacting performance.</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">Poppins (Google Fonts)</div>
+          <div class="tool-version">—</div>
+        </td>
+        <td>Loaded via CDN</td>
+        <td class="tool-role">Primary typeface</td>
+        <td>The Poppins typeface is used for all headings, body text, buttons, and UI elements across the website. Loaded using Next.js's built-in Google Fonts integration (weights 400–900), which ensures fonts are self-hosted for performance and privacy.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ── SECTION 3: CONTENT MANAGEMENT ── -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-dot" style="background:#0f5132"></div>
+    <div class="section-title" style="color:#0f5132">3. Content Management System (CMS)</div>
+    <div class="section-line"></div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:160px">Tool / Technology</th>
+        <th style="width:110px">Version</th>
+        <th style="width:160px">Role</th>
+        <th>Purpose &amp; How It Is Used</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="tool-name">Sanity CMS</div>
+          <div class="tool-version">v5.23.x</div>
+        </td>
+        <td>5.23.0</td>
+        <td class="tool-role">Headless content management</td>
+        <td>The content management platform used to create, edit, and publish all dynamic website content — including blog posts and job listings. Authorised team members log in to the Sanity Studio (a web-based editor accessible at <strong>/studio</strong> on the website domain) to manage content without touching code. Content is delivered to the website via Sanity's API.</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">next-sanity</div>
+          <div class="tool-version">v12.3.x</div>
+        </td>
+        <td>12.3.1</td>
+        <td class="tool-role">CMS integration layer</td>
+        <td>The official connector between Sanity CMS and Next.js. Handles fetching content from the Sanity API, embedding the Sanity Studio within the website, and enabling live content previews during editing.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ── SECTION 4: FORMS & COMMUNICATION ── -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-dot" style="background:#6b21a8"></div>
+    <div class="section-title" style="color:#6b21a8">4. Forms &amp; Communication</div>
+    <div class="section-line"></div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:160px">Tool / Technology</th>
+        <th style="width:110px">Version</th>
+        <th style="width:160px">Role</th>
+        <th>Purpose &amp; How It Is Used</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="tool-name">Web3Forms</div>
+          <div class="tool-version">API v1</div>
+        </td>
+        <td>API v1</td>
+        <td class="tool-role">Contact form delivery service</td>
+        <td>Handles all contact form submissions from the website's Contact Us page. When a visitor submits the form (name, email, phone, message, enquiry type, and optional CV attachment), Web3Forms securely receives the data and forwards it to <strong>career@talentpath.co.in</strong>. No backend server or database is required — the form communicates directly with the Web3Forms API. Includes built-in spam protection via a honeypot field.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ── SECTION 5: MEDIA & ASSETS ── -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-dot" style="background:#1e293b"></div>
+    <div class="section-title" style="color:#1e293b">5. Media &amp; Asset Management</div>
+    <div class="section-line"></div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:160px">Tool / Technology</th>
+        <th style="width:110px">Version</th>
+        <th style="width:160px">Role</th>
+        <th>Purpose &amp; How It Is Used</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="tool-name">Next.js Image</div>
+          <div class="tool-version">Built-in</div>
+        </td>
+        <td>Built into Next.js</td>
+        <td class="tool-role">Image optimisation</td>
+        <td>All images on the website (team photos, industry banners, logo, founder photos) are served through Next.js's built-in Image component. It automatically converts images to modern WebP format, resizes them to the exact dimensions needed per screen size, and lazy-loads them so the page loads faster. No manual image editing is required.</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">FFmpeg</div>
+          <div class="tool-version">v8.x</div>
+        </td>
+        <td>8.x</td>
+        <td class="tool-role">Video processing tool</td>
+        <td>Used as a one-time processing tool to merge and normalise multiple background video clips (meeting room, office, and team footage) into a single optimised video file (<em>combined.mp4</em>) at 1920×1080 resolution and 30 frames per second. This combined video is used as the looping background on the website's hero section. FFmpeg is a developer tool and is not part of the live website.</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">Google Maps</div>
+          <div class="tool-version">—</div>
+        </td>
+        <td>Linked (no API key)</td>
+        <td class="tool-role">Office location link</td>
+        <td>The "Visit Us" contact card links to a Google Maps search for the TalentPath office at Procapitus Business Park, Sector 63, Noida. This is a standard URL link — no Google Maps API key or embed is used.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ── SECTION 6: DEVELOPER TOOLS ── -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-dot" style="background:#7c3aed"></div>
+    <div class="section-title" style="color:#7c3aed">6. Developer &amp; Build Tools</div>
+    <div class="section-line"></div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:160px">Tool / Technology</th>
+        <th style="width:110px">Version</th>
+        <th style="width:160px">Role</th>
+        <th>Purpose &amp; How It Is Used</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="tool-name">Turbopack</div>
+          <div class="tool-version">Built-in</div>
+        </td>
+        <td>Built into Next.js 16</td>
+        <td class="tool-role">Development build tool</td>
+        <td>The build bundler included with Next.js 16. Compiles and bundles all TypeScript, React, and CSS files during development with extremely fast rebuild speeds. Used only during development — not part of the live website.</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">ESLint</div>
+          <div class="tool-version">v9.x</div>
+        </td>
+        <td>9.x</td>
+        <td class="tool-role">Code quality linter</td>
+        <td>Automatically analyses all code files for errors, bad patterns, and potential bugs during development. Runs as part of the build process and flags issues before they reach the live site. A developer tool only — not visible to website visitors.</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">PostCSS</div>
+          <div class="tool-version">Built-in</div>
+        </td>
+        <td>Built into Next.js</td>
+        <td class="tool-role">CSS processing</td>
+        <td>Processes and compiles Tailwind CSS utility classes into the final optimised stylesheet delivered to website visitors. Automatically removes unused CSS classes, resulting in very small stylesheet file sizes. A build-time tool only.</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">npm</div>
+          <div class="tool-version">v10.x</div>
+        </td>
+        <td>10.x</td>
+        <td class="tool-role">Package manager</td>
+        <td>Manages all code dependencies (libraries, frameworks, tools) listed above. Used by developers to install, update, and maintain the packages the project relies on. Not part of the live website.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ── SECTION 7: VERSION CONTROL & REPOSITORY ── -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-dot" style="background:#334155"></div>
+    <div class="section-title" style="color:#334155">7. Version Control &amp; Source Code</div>
+    <div class="section-line"></div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:160px">Tool / Technology</th>
+        <th style="width:110px">Version</th>
+        <th style="width:160px">Role</th>
+        <th>Purpose &amp; How It Is Used</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="tool-name">Git</div>
+          <div class="tool-version">—</div>
+        </td>
+        <td>System</td>
+        <td class="tool-role">Version control system</td>
+        <td>Tracks every change made to the website's code over time. Every update, bug fix, and new feature is recorded as a "commit" with a description, making it possible to review history and reverse any change if needed.</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tool-name">GitHub</div>
+          <div class="tool-version">—</div>
+        </td>
+        <td>Cloud platform</td>
+        <td class="tool-role">Code repository &amp; backup</td>
+        <td>The cloud-hosted repository where all source code is stored and backed up. Repository: <strong>github.com/kritika20sharma/Talentpath_new</strong>. Provides a full audit trail of every change, secure code storage, and serves as the source for deployment pipelines.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ── DEPLOYMENT CALLOUT ── -->
+<div class="callout">
+  <div class="callout-title">8. Deployment &amp; Hosting (Recommended)</div>
+  <div class="callout-grid">
+    <div>
+      <h4>Vercel (Hosting Platform)</h4>
+      <p>The recommended production hosting platform for Next.js applications, built by the same team that created Next.js. Connects directly to the GitHub repository — every time code is pushed to the <span>main</span> branch, the site automatically re-deploys within ~60 seconds. Includes global CDN, automatic SSL, and 99.99% uptime SLA. Free tier available; Pro plan recommended for production traffic.</p>
+    </div>
+    <div>
+      <h4>Custom Domain (talentpath.co.in)</h4>
+      <p>The production website domain is configured by adding a <span>CNAME DNS record</span> pointing to Vercel's servers. SSL/HTTPS certificates are automatically provisioned and renewed at no cost. Domain registration and DNS management are handled separately through the domain registrar (e.g., GoDaddy, BigRock, or Hostinger).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── IMPORTANT NOTES ── -->
+<div class="notes">
+  <div class="notes-title">Important Notes for Client Records</div>
+  <ul>
+    <li><strong>Web3Forms account:</strong> The contact form is linked to a Web3Forms account registered with <strong>career@talentpath.co.in</strong>. All form submissions will be delivered to this inbox. The Web3Forms access key must be kept secure and not shared publicly.</li>
+    <li><strong>Sanity CMS project:</strong> Blog posts and job listings are managed through the Sanity Studio. Team members who need editorial access must be added as users in the Sanity project settings at <strong>sanity.io/manage</strong>.</li>
+    <li><strong>GitHub repository access:</strong> The source code is stored at github.com/kritika20sharma/Talentpath_new. Access is controlled via GitHub account permissions. Any developer working on the site in future must be granted repository access.</li>
+    <li><strong>No databases used:</strong> The website does not use any traditional SQL or NoSQL database. Content is managed via Sanity CMS and form submissions are handled via Web3Forms — no self-hosted database infrastructure is needed.</li>
+    <li><strong>No backend server:</strong> The website runs entirely on Next.js (serverless) deployed on Vercel. There is no separate Node, PHP, or Python server to maintain.</li>
+    <li><strong>Open-source libraries:</strong> All frameworks and libraries listed in this document are open-source and commercially free to use (MIT / Apache 2.0 licensed), with the exception of Sanity CMS and Vercel which have free tiers and paid plans for higher usage.</li>
+  </ul>
+</div>
+
+<!-- ── FOOTER ── -->
+<div class="doc-footer">
+  <span>TalentPath Management Services Pvt. Ltd. — Client Confidential — Not for public distribution</span>
+  <span>talentpath.co.in &nbsp;·&nbsp; Prepared 14 June 2026</span>
+</div>
+
+</body>
+</html>
