@@ -230,7 +230,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="relative rounded-3xl overflow-hidden shadow-xl">
+          <div className="rounded-3xl overflow-hidden shadow-xl">
             <Image
               src="/images/team.jpg"
               alt="TalentPath Team"
@@ -239,15 +239,10 @@ export default function AboutPage() {
               className="w-full object-cover"
               style={{ maxHeight: 'clamp(260px, 55vw, 520px)', objectPosition: 'center top' }}
             />
-            <div
-              className="absolute inset-0 flex items-end"
-              style={{ background: 'linear-gradient(to top, rgba(0,20,70,0.75) 0%, transparent 55%)' }}
-            >
-              <div className="p-5 sm:p-8 lg:p-12 w-full">
-                <p className="text-white font-black text-base sm:text-xl mb-1">TalentPath Management Services</p>
-                <p className="text-white/70 text-xs sm:text-sm">Noida, India — Building careers. Powering organisations.</p>
-              </div>
-            </div>
+          </div>
+          <div className="mt-4 sm:mt-5 text-center sm:text-left px-1">
+            <p className="font-black text-base sm:text-lg" style={{ color: 'var(--navy)' }}>TalentPath Management Services</p>
+            <p className="text-xs sm:text-sm mt-0.5" style={{ color: 'var(--text-mid)' }}>Noida, India — Building careers. Powering organisations.</p>
           </div>
         </div>
       </section>

@@ -52,106 +52,95 @@ const contactDetails = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden">
+    <section className="relative min-h-screen flex flex-col" style={{ backgroundColor: 'rgba(10,15,40,0.97)' }}>
 
-      {/* Background video */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        src="/videos/combined.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-      />
+      {/* Background video — capped to viewport height so it never bleeds past the fold */}
+      <div className="absolute top-0 left-0 right-0 h-screen overflow-hidden z-0">
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/videos/combined.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
 
-      {/* Lightweight vignette — no blur, lets the video stay sharp */}
-      <div
-        className="absolute inset-0 z-10"
-        style={{ backgroundColor: 'rgba(10,15,40,0.28)' }}
-      />
+        {/* Lightweight vignette */}
+        <div
+          className="absolute inset-0"
+          style={{ backgroundColor: 'rgba(10,15,40,0.28)' }}
+        />
 
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 z-10 opacity-5">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" strokeWidth="1" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" strokeWidth="1" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+        </div>
       </div>
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col flex-1 max-w-7xl mx-auto px-6 lg:px-8 pt-28 sm:pt-36 pb-16 sm:pb-24">
+      <div className="relative z-20 flex flex-col items-center flex-1 max-w-7xl mx-auto px-6 lg:px-8 pt-28 sm:pt-36 pb-16 sm:pb-24 text-center">
 
-        {/* Localized glass panel — blur is contained to this box only */}
+        {/* Badge */}
         <motion.div
-          className="self-start mb-8 sm:mb-14 rounded-3xl p-7 sm:p-9 lg:p-10"
-          style={{
-            backgroundColor: 'rgba(10,15,40,0.25)',
-            backdropFilter: 'blur(6px)',
-            WebkitBackdropFilter: 'blur(6px)',
-            boxShadow: '0 8px 40px rgba(0,0,0,0.20)',
-            border: '1px solid rgba(255,255,255,0.08)',
-          }}
-          initial={{ opacity: 0, y: 20 }}
+          className="mb-5"
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <motion.div
-            className="mb-5"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest" style={{ backgroundColor: 'var(--orange)', color: 'white' }}>
-              India&apos;s Specialist Recruitment Partner
-            </span>
-          </motion.div>
-
-          <motion.h1
-            className="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.08] mb-5 max-w-4xl"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            Find the Right Talent,
-            <br />
-            <span style={{ color: 'var(--orange)' }}>Build a Better Future.</span>
-          </motion.h1>
-
-          <motion.p
-            className="text-lg sm:text-xl font-semibold mb-3"
-            style={{ color: 'rgba(255,255,255,0.90)' }}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            Unlock Potential, Empower People.
-          </motion.p>
-
-          <motion.p
-            className="text-sm sm:text-base max-w-xl leading-relaxed"
-            style={{ color: 'rgba(255,255,255,0.65)' }}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            TalentPath delivers Lateral Hiring, Executive Search and Managed Recruitment Services
-            across 9 specialist industries — with precision, speed and genuine care.
-          </motion.p>
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest" style={{ backgroundColor: 'var(--orange)', color: 'white' }}>
+            India&apos;s Specialist Recruitment Partner
+          </span>
         </motion.div>
+
+        {/* Heading */}
+        <motion.h1
+          className="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.08] mb-5 max-w-4xl"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          Find the Right Talent,
+          <br />
+          <span style={{ color: 'var(--orange)' }}>Build a Better Future.</span>
+        </motion.h1>
+
+        <motion.p
+          className="text-lg sm:text-xl font-semibold mb-3 max-w-2xl"
+          style={{ color: 'rgba(255,255,255,0.90)' }}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          Unlock Potential, Empower People.
+        </motion.p>
+
+        <motion.p
+          className="text-sm sm:text-base max-w-xl leading-relaxed mb-10 sm:mb-14"
+          style={{ color: 'rgba(255,255,255,0.65)' }}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          TalentPath delivers Lateral Hiring, Executive Search and Managed Recruitment Services
+          across 9 specialist industries — with precision, speed and genuine care.
+        </motion.p>
 
         {/* Dual CTA */}
         <motion.div
-          className="grid sm:grid-cols-2 gap-4 max-w-2xl"
+          className="grid sm:grid-cols-2 gap-4 w-full max-w-2xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           {/* Employers */}
-          <div className="group rounded-2xl p-5 sm:p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl" style={{ backgroundColor: 'var(--orange)' }}>
+          <div className="group rounded-2xl p-5 sm:p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-left" style={{ backgroundColor: 'var(--orange)' }}>
             <div className="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center mb-4">
               <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
                 <path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM4 5h16V4a1 1 0 00-1-1H5a1 1 0 00-1 1v1z" />
@@ -170,7 +159,7 @@ export default function Hero() {
           </div>
 
           {/* Job seekers */}
-          <div className="group rounded-2xl p-5 sm:p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl" style={{ backgroundColor: '#004bb2' }}>
+          <div className="group rounded-2xl p-5 sm:p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-left" style={{ backgroundColor: '#004bb2' }}>
             <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}>
               <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
                 <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
@@ -191,7 +180,7 @@ export default function Hero() {
 
         {/* Trust badges */}
         <motion.div
-          className="mt-8 sm:mt-14 pt-6 sm:pt-8 border-t border-white/15 flex flex-wrap gap-x-5 gap-y-3 sm:gap-8 items-center"
+          className="mt-8 sm:mt-14 pt-6 sm:pt-8 border-t border-white/15 w-full flex flex-wrap justify-center gap-x-5 gap-y-3 sm:gap-8 items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.75 }}
@@ -211,7 +200,7 @@ export default function Hero() {
         {/* Contact card */}
         <motion.div
           id="hero-contact"
-          className="mt-16 sm:mt-20"
+          className="mt-16 sm:mt-20 w-full"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -228,7 +217,7 @@ export default function Hero() {
             {contactDetails.map((item) => {
               const inner = (
                 <div
-                  className="flex flex-col gap-3 p-5 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group"
+                  className="flex flex-col gap-3 p-5 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group text-left"
                   style={{
                     backgroundColor: 'rgba(255,255,255,0.07)',
                     borderColor: 'rgba(255,255,255,0.12)',
