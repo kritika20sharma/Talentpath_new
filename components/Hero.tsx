@@ -1,96 +1,16 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-const videos = [
-  '/videos/manufacturing.mp4',
-  '/videos/warehouse.mp4',
-  '/videos/meeting.mp4',
-  '/videos/pharma.mp4',
-  '/videos/electronics.mp4',
-  '/videos/fashion.mp4',
-];
-
-const DISPLAY_MS = 5500;  // how long each clip shows
-const FADE_MS    = 1200;  // crossfade duration
-
 export default function Hero() {
-  // Dual-buffer: slot A and slot B each hold a video index
-  const [indexA, setIndexA] = useState(0);
-  const [indexB, setIndexB] = useState(1);
-  const [foreground, setForeground] = useState<'A' | 'B'>('A');
-  const refA = useRef<HTMLVideoElement>(null);
-  const refB = useRef<HTMLVideoElement>(null);
-  const isFirst = useRef(true);
-
-  // Cycle every (display + fade) ms
-  useEffect(() => {
-    const id = setInterval(() => {
-      setForeground(f => (f === 'A' ? 'B' : 'A'));
-    }, DISPLAY_MS + FADE_MS);
-    return () => clearInterval(id);
-  }, []);
-
-  // After each foreground flip, recycle the now-background slot to the next video
-  useEffect(() => {
-    if (isFirst.current) { isFirst.current = false; return; }
-    const id = setTimeout(() => {
-      if (foreground === 'B') {
-        // A just became background — load it with the video 2 steps ahead
-        setIndexA(prev => (prev + 2) % videos.length);
-      } else {
-        setIndexB(prev => (prev + 2) % videos.length);
-      }
-    }, FADE_MS + 80);
-    return () => clearTimeout(id);
-  }, [foreground]);
-
-  // Restart background slot from beginning after src update so it's fresh next time
-  useEffect(() => {
-    if (foreground === 'B' && refA.current) {
-      refA.current.currentTime = 0;
-      refA.current.play().catch(() => {});
-    }
-  }, [indexA, foreground]);
-
-  useEffect(() => {
-    if (foreground === 'A' && refB.current) {
-      refB.current.currentTime = 0;
-      refB.current.play().catch(() => {});
-    }
-  }, [indexB, foreground]);
-
-  const currentVideoIdx = foreground === 'A' ? indexA : indexB;
-
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
 
-      {/* Slot A */}
+      {/* Background video */}
       <video
-        ref={refA}
         className="absolute inset-0 w-full h-full object-cover z-0"
-        style={{
-          opacity: foreground === 'A' ? 1 : 0,
-          transition: `opacity ${FADE_MS}ms cubic-bezier(0.4,0,0.2,1)`,
-        }}
-        src={videos[indexA]}
-        autoPlay
-        muted
-        loop
-        playsInline
-      />
-
-      {/* Slot B */}
-      <video
-        ref={refB}
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        style={{
-          opacity: foreground === 'B' ? 1 : 0,
-          transition: `opacity ${FADE_MS}ms cubic-bezier(0.4,0,0.2,1)`,
-        }}
-        src={videos[indexB]}
+        src="/videos/combined.mp4"
         autoPlay
         muted
         loop
@@ -230,31 +150,6 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* Video dot indicators */}
-        <div className="mt-8 flex gap-2">
-          {videos.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                if (foreground === 'A') {
-                  setIndexB(i);
-                  setForeground('B');
-                  setTimeout(() => setIndexA((i + 1) % videos.length), FADE_MS + 80);
-                } else {
-                  setIndexA(i);
-                  setForeground('A');
-                  setTimeout(() => setIndexB((i + 1) % videos.length), FADE_MS + 80);
-                }
-              }}
-              className="h-1.5 rounded-full transition-all duration-500"
-              style={{
-                width: i === currentVideoIdx ? '28px' : '8px',
-                backgroundColor: i === currentVideoIdx ? 'var(--orange)' : 'rgba(255,255,255,0.35)',
-              }}
-              aria-label={`Video ${i + 1}`}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );
