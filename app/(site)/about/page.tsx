@@ -106,7 +106,7 @@ export default function AboutPage() {
               <div
                 key={i}
                 className="rounded-2xl p-5 sm:p-8 text-center"
-                style={{ backgroundColor: i % 2 === 0 ? 'var(--navy)' : 'var(--light-bg)' }}
+                style={{ backgroundColor: i % 2 === 0 ? '#1E293B' : '#F8FAFC' }}
               >
                 <span
                   className="text-3xl sm:text-4xl font-black block mb-2"
@@ -146,7 +146,7 @@ export default function AboutPage() {
             {/* Mamta Saharan */}
             <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
               <FounderPhotoUpload
-                src="/images/founder-female.jpg"
+                src="/images/bosslady.jpeg"
                 alt="Mamta Saharan — CEO & Co-Founder"
                 name="Mamta Saharan"
                 title="CEO & Co-Founder"

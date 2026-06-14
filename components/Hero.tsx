@@ -3,6 +3,53 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
+const contactDetails = [
+  {
+    label: 'Call Us',
+    value: '+91 96549 02143',
+    sub: '+91 74281 20251',
+    href: 'tel:+919654902143',
+    icon: (
+      <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Email Us',
+    value: 'career@talentpath.co.in',
+    sub: 'We reply within 24 hrs',
+    href: 'mailto:career@talentpath.co.in',
+    icon: (
+      <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Visit Us',
+    value: '302, Procapitus Business Park',
+    sub: 'Sector 63, Noida UP 201301',
+    href: 'https://maps.google.com/?q=Procapitus+Business+Park+Sector+63+Noida',
+    icon: (
+      <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Business Hours',
+    value: 'Mon – Sat: 9 AM – 7 PM',
+    sub: 'Sunday: Closed',
+    href: null,
+    icon: (
+      <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
+        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" />
+      </svg>
+    ),
+  },
+];
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
@@ -17,14 +64,10 @@ export default function Hero() {
         playsInline
       />
 
-      {/* Cinematic overlay — very light at top (navbar area), builds density toward content */}
+      {/* Lightweight vignette — no blur, lets the video stay sharp */}
       <div
         className="absolute inset-0 z-10"
-        style={{
-          background: `
-            linear-gradient(to bottom, rgba(0,10,40,0.55) 0%, rgba(0,10,40,0.15) 18%, rgba(0,15,55,0.35) 55%, rgba(0,10,40,0.65) 100%)
-          `,
-        }}
+        style={{ backgroundColor: 'rgba(10,15,40,0.28)' }}
       />
 
       {/* Subtle grid pattern */}
@@ -40,50 +83,65 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col flex-1 max-w-7xl mx-auto px-6 lg:px-8 pt-32 sm:pt-44 pb-16 sm:pb-24">
+      <div className="relative z-20 flex flex-col flex-1 max-w-7xl mx-auto px-6 lg:px-8 pt-28 sm:pt-36 pb-16 sm:pb-24">
 
+        {/* Localized glass panel — blur is contained to this box only */}
         <motion.div
-          className="mb-6"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-          <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest" style={{ backgroundColor: 'var(--orange)', color: 'white' }}>
-            India&apos;s Specialist Recruitment Partner
-          </span>
-        </motion.div>
-
-        <motion.h1
-          className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.08] mb-6 max-w-4xl"
+          className="self-start mb-8 sm:mb-14 rounded-3xl p-7 sm:p-9 lg:p-10"
+          style={{
+            backgroundColor: 'rgba(10,15,40,0.25)',
+            backdropFilter: 'blur(6px)',
+            WebkitBackdropFilter: 'blur(6px)',
+            boxShadow: '0 8px 40px rgba(0,0,0,0.20)',
+            border: '1px solid rgba(255,255,255,0.08)',
+          }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          Find the Right Talent,
-          <br />
-          <span style={{ color: 'var(--orange)' }}>Build a Better Future.</span>
-        </motion.h1>
+          <motion.div
+            className="mb-5"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest" style={{ backgroundColor: 'var(--orange)', color: 'white' }}>
+              India&apos;s Specialist Recruitment Partner
+            </span>
+          </motion.div>
 
-        <motion.p
-          className="text-lg sm:text-xl font-semibold mb-2"
-          style={{ color: 'rgba(255,255,255,0.90)' }}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-          Unlock Potential, Empower People.
-        </motion.p>
+          <motion.h1
+            className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.08] mb-5 max-w-4xl"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            Find the Right Talent,
+            <br />
+            <span style={{ color: 'var(--orange)' }}>Build a Better Future.</span>
+          </motion.h1>
 
-        <motion.p
-          className="text-sm sm:text-base max-w-xl mb-8 sm:mb-14 leading-relaxed"
-          style={{ color: 'rgba(255,255,255,0.60)' }}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-          TalentPath delivers Lateral Hiring, Executive Search and Managed Recruitment Services
-          across 9 specialist industries — with precision, speed and genuine care.
-        </motion.p>
+          <motion.p
+            className="text-lg sm:text-xl font-semibold mb-3"
+            style={{ color: 'rgba(255,255,255,0.90)' }}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            Unlock Potential, Empower People.
+          </motion.p>
+
+          <motion.p
+            className="text-sm sm:text-base max-w-xl leading-relaxed"
+            style={{ color: 'rgba(255,255,255,0.65)' }}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            TalentPath delivers Lateral Hiring, Executive Search and Managed Recruitment Services
+            across 9 specialist industries — with precision, speed and genuine care.
+          </motion.p>
+        </motion.div>
 
         {/* Dual CTA */}
         <motion.div
@@ -148,6 +206,62 @@ export default function Hero() {
               <span className="text-white/65 text-sm font-medium">{badge}</span>
             </div>
           ))}
+        </motion.div>
+
+        {/* Contact card */}
+        <motion.div
+          id="hero-contact"
+          className="mt-16 sm:mt-20"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-px flex-1 bg-white/15" />
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--orange)' }}>
+              Get in Touch
+            </span>
+            <div className="h-px flex-1 bg-white/15" />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {contactDetails.map((item) => {
+              const inner = (
+                <div
+                  className="flex flex-col gap-3 p-5 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group"
+                  style={{
+                    backgroundColor: 'rgba(255,255,255,0.07)',
+                    borderColor: 'rgba(255,255,255,0.12)',
+                    backdropFilter: 'blur(12px)',
+                    WebkitBackdropFilter: 'blur(12px)',
+                  }}
+                >
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110"
+                    style={{ backgroundColor: 'var(--orange)' }}
+                  >
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                      {item.label}
+                    </p>
+                    <p className="text-sm font-semibold text-white leading-snug">{item.value}</p>
+                    {item.sub && (
+                      <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.50)' }}>{item.sub}</p>
+                    )}
+                  </div>
+                </div>
+              );
+              return item.href ? (
+                <a key={item.label} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
+                  {inner}
+                </a>
+              ) : (
+                <div key={item.label}>{inner}</div>
+              );
+            })}
+          </div>
         </motion.div>
 
       </div>
