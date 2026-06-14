@@ -43,7 +43,7 @@ export default function Stats() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {stats.map((stat, i) => (
             <div key={i} className="flex flex-col items-center text-center lg:border-r last:border-r-0" style={{ borderColor: 'var(--border)' }}>
-              <span className="text-4xl sm:text-5xl font-black leading-none mb-2" style={{ color: 'var(--navy)' }}>
+              <span className="text-3xl sm:text-4xl lg:text-5xl font-black leading-none mb-2" style={{ color: 'var(--navy)' }}>
                 {stat.numeric !== null
                   ? <Counter to={stat.numeric} suffix={stat.suffix ?? ''} />
                   : stat.value}

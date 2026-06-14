@@ -83,17 +83,17 @@ export default function WhatWeDoPage() {
     <main>
       {/* Hero */}
       <section
-        className="pt-36 pb-20"
+        className="pt-24 pb-10 sm:pt-36 sm:pb-20"
         style={{ background: 'linear-gradient(135deg, #0F2B50 0%, #1A3A6B 100%)' }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <span className="text-xs font-bold uppercase tracking-widest mb-4 block" style={{ color: 'var(--orange)' }}>
             Our Services
           </span>
-          <h1 className="text-5xl lg:text-6xl font-black text-white leading-tight mb-6 max-w-3xl">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4 sm:mb-6 max-w-3xl">
             Recruitment built around your goals.
           </h1>
-          <p className="text-xl text-white/70 max-w-2xl">
+          <p className="text-base sm:text-xl text-white/70 max-w-2xl">
             Four flexible service models. One consistent promise: we find the right people, not just
             the available ones.
           </p>
@@ -101,13 +101,13 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* Services */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-20">
+      <section className="py-12 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12 lg:space-y-20">
           {services.map((service, i) => (
             <div
               key={service.id}
               id={service.id}
-              className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-start ${i % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
+              className={`grid lg:grid-cols-2 gap-8 lg:gap-20 items-start ${i % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
             >
               {/* Text */}
               <div className={i % 2 === 1 ? 'lg:col-start-2' : ''}>
@@ -142,7 +142,7 @@ export default function WhatWeDoPage() {
 
               {/* Features card */}
               <div
-                className={`rounded-2xl p-8 ${i % 2 === 1 ? 'lg:col-start-1' : ''}`}
+                className={`rounded-2xl p-6 sm:p-8 ${i % 2 === 1 ? 'lg:col-start-1' : ''}`}
                 style={{ backgroundColor: 'var(--light-bg)' }}
               >
                 <h3 className="text-sm font-bold uppercase tracking-widest mb-6" style={{ color: 'var(--navy)' }}>
@@ -170,9 +170,9 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20" style={{ backgroundColor: 'var(--navy)' }}>
+      <section className="py-12 sm:py-20" style={{ backgroundColor: 'var(--navy)' }}>
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-black text-white mb-4">Not sure which service fits?</h2>
+          <h2 className="text-2xl sm:text-3xl font-black text-white mb-4">Not sure which service fits?</h2>
           <p className="text-white/65 mb-8">
             Tell us your challenge and we&apos;ll recommend the right approach — no commitment required.
           </p>

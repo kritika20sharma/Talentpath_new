@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import ContactForm from '@/components/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact Us | TalentPath',
@@ -9,68 +10,24 @@ export default function ContactPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="pt-36 pb-20" style={{ background: 'linear-gradient(135deg, #004bb2 0%, #1a63d4 100%)' }}>
+      <section className="pt-24 pb-10 sm:pt-36 sm:pb-20" style={{ background: 'linear-gradient(135deg, #0F2B50 0%, #1A3A6B 100%)' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <span className="text-xs font-bold uppercase tracking-widest mb-4 block" style={{ color: 'var(--orange)' }}>Get in Touch</span>
-          <h1 className="text-5xl lg:text-6xl font-black text-white leading-tight mb-4 max-w-2xl">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4 max-w-2xl">
             Let&apos;s start a conversation.
           </h1>
-          <p className="text-xl text-white/70 max-w-xl">
+          <p className="text-base sm:text-xl text-white/70 max-w-xl">
             Our team is available 24/7. Reach out and we&apos;ll respond within 1–2 business days.
           </p>
         </div>
       </section>
 
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16">
+      <section className="py-12 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16">
           {/* Form */}
           <div>
             <h2 className="text-2xl font-black mb-8" style={{ color: 'var(--navy)' }}>Send us a message</h2>
-            <form className="space-y-5">
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-sm font-semibold mb-1.5" style={{ color: 'var(--navy)' }}>First name *</label>
-                  <input type="text" required className="w-full px-4 py-3 rounded-xl border text-sm outline-none" style={{ borderColor: 'var(--border)' }} placeholder="Rahul" />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold mb-1.5" style={{ color: 'var(--navy)' }}>Last name *</label>
-                  <input type="text" required className="w-full px-4 py-3 rounded-xl border text-sm outline-none" style={{ borderColor: 'var(--border)' }} placeholder="Sharma" />
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-1.5" style={{ color: 'var(--navy)' }}>Email address *</label>
-                <input type="email" required className="w-full px-4 py-3 rounded-xl border text-sm outline-none" style={{ borderColor: 'var(--border)' }} placeholder="rahul@company.com" />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-1.5" style={{ color: 'var(--navy)' }}>Subject *</label>
-                <input type="text" required className="w-full px-4 py-3 rounded-xl border text-sm outline-none" style={{ borderColor: 'var(--border)' }} placeholder="e.g. Executive Search enquiry" />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-1.5" style={{ color: 'var(--navy)' }}>I am a... *</label>
-                <select className="w-full px-4 py-3 rounded-xl border text-sm outline-none" style={{ borderColor: 'var(--border)' }}>
-                  <option value="">Please select</option>
-                  <option>Employer / Hiring manager</option>
-                  <option>Active job seeker</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-1.5" style={{ color: 'var(--navy)' }}>Attach CV</label>
-                <input type="file" accept=".pdf,.doc,.docx" className="w-full px-4 py-3 rounded-xl border text-sm" style={{ borderColor: 'var(--border)' }} />
-                <p className="text-xs mt-1" style={{ color: 'var(--text-light)' }}>PDF, DOC or DOCX. Max 5MB.</p>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-1.5" style={{ color: 'var(--navy)' }}>Message *</label>
-                <textarea required rows={4} className="w-full px-4 py-3 rounded-xl border text-sm outline-none resize-none" style={{ borderColor: 'var(--border)' }} placeholder="Tell us what you're looking for..." />
-              </div>
-              <button type="submit" className="w-full py-4 rounded-full font-bold text-white text-sm hover:opacity-90 transition-all" style={{ backgroundColor: 'var(--orange)' }}>
-                Send message
-              </button>
-              <p className="text-xs text-center" style={{ color: 'var(--text-light)' }}>
-                Or email us at{' '}
-                <a href="mailto:career@talentpath.co.in" className="font-semibold" style={{ color: 'var(--navy)' }}>career@talentpath.co.in</a>
-              </p>
-            </form>
+            <ContactForm />
           </div>
 
           {/* Info */}

@@ -42,7 +42,7 @@ export default function Navbar() {
               alt="TalentPath"
               width={480}
               height={192}
-              className={`w-auto transition-all duration-300 ${scrolled ? 'h-32' : 'h-28'}`}
+              className={`w-auto transition-all duration-300 ${scrolled ? 'h-12 sm:h-32' : 'h-11 sm:h-28'}`}
               priority
             />
           </Link>

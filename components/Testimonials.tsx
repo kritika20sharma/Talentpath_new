@@ -81,23 +81,23 @@ export default function Testimonials() {
               </blockquote>
 
               {/* Author */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 flex-wrap">
                 <div
-                  className="w-11 h-11 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
+                  className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0"
                   style={{ backgroundColor: t.color }}
                 >
                   {t.initials}
                 </div>
-                <div>
-                  <div className="font-bold text-sm" style={{ color: 'var(--navy)' }}>
+                <div className="flex-1 min-w-0">
+                  <div className="font-bold text-sm truncate" style={{ color: 'var(--navy)' }}>
                     {t.name}
                   </div>
-                  <div className="text-xs" style={{ color: 'var(--text-light)' }}>
+                  <div className="text-xs truncate" style={{ color: 'var(--text-light)' }}>
                     {t.role}
                   </div>
                 </div>
                 <span
-                  className="ml-auto text-xs font-semibold px-3 py-1 rounded-full capitalize"
+                  className="text-xs font-semibold px-3 py-1 rounded-full capitalize shrink-0"
                   style={{
                     backgroundColor: t.type === 'client' ? 'rgba(15,43,80,0.1)' : 'rgba(232,96,28,0.1)',
                     color: t.type === 'client' ? 'var(--navy)' : 'var(--orange)',

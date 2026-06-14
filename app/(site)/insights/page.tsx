@@ -46,24 +46,24 @@ export default async function InsightsPage() {
     <main>
       {/* Hero */}
       <section
-        className="pt-36 pb-20"
+        className="pt-24 pb-10 sm:pt-36 sm:pb-20"
         style={{ background: 'linear-gradient(135deg, #0F2B50 0%, #1A3A6B 100%)' }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <span className="text-xs font-bold uppercase tracking-widest mb-4 block" style={{ color: 'var(--orange)' }}>
             Insights
           </span>
-          <h1 className="text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
             Stay ahead of the market.
           </h1>
-          <p className="text-xl text-white/70 max-w-2xl">
+          <p className="text-base sm:text-xl text-white/70 max-w-2xl">
             Hiring guides, salary benchmarks, career advice and workforce trends from our specialist
             consultants.
           </p>
         </div>
       </section>
 
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {posts.length === 0 ? (
             <div className="text-center py-20">
@@ -79,14 +79,14 @@ export default async function InsightsPage() {
                   className="rounded-2xl overflow-hidden mb-12 grid lg:grid-cols-2"
                   style={{ backgroundColor: 'var(--navy)' }}
                 >
-                  <div className="p-10 lg:p-14 flex flex-col justify-center">
+                  <div className="p-6 sm:p-10 lg:p-14 flex flex-col justify-center">
                     <span
                       className="text-xs font-bold uppercase tracking-widest mb-4"
                       style={{ color: 'var(--orange)' }}
                     >
                       Featured · {featured.category}
                     </span>
-                    <h2 className="text-3xl font-black text-white leading-tight mb-4">
+                    <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-4">
                       {featured.title}
                     </h2>
                     <p className="text-white/65 mb-6">{featured.excerpt}</p>

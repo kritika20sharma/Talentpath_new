@@ -48,7 +48,7 @@ export default function WhatWeDo() {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
             <FadeUp key={i} delay={i * 0.12}>
               <Link href={service.href} className="group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col h-full" style={{ backgroundColor: 'var(--light-bg)' }}>

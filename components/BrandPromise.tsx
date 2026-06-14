@@ -46,12 +46,12 @@ export default function BrandPromise() {
         style={{ backgroundImage: 'radial-gradient(circle at 70% 50%, white 0%, transparent 70%)' }} />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start mb-12 sm:mb-16">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-12 items-start mb-10 sm:mb-16">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
               Why TalentPath
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
               What sets us apart.
             </h2>
           </div>

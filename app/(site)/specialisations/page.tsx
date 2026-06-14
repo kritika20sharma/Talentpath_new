@@ -79,17 +79,17 @@ export default function SpecialisationsPage() {
     <main>
       {/* Hero */}
       <section
-        className="pt-36 pb-20"
+        className="pt-24 pb-10 sm:pt-36 sm:pb-20"
         style={{ background: 'linear-gradient(135deg, #0F2B50 0%, #1A3A6B 100%)' }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <span className="text-xs font-bold uppercase tracking-widest mb-4 block" style={{ color: 'var(--orange)' }}>
             Specialisations
           </span>
-          <h1 className="text-5xl lg:text-6xl font-black text-white leading-tight mb-6 max-w-3xl">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4 sm:mb-6 max-w-3xl">
             Eight divisions. One standard of excellence.
           </h1>
-          <p className="text-xl text-white/70 max-w-2xl">
+          <p className="text-base sm:text-xl text-white/70 max-w-2xl">
             Our consultants are genuine specialists — they know your market, your competition, and the
             talent hiding in plain sight.
           </p>
@@ -97,7 +97,7 @@ export default function SpecialisationsPage() {
       </section>
 
       {/* Divisions */}
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-6">
           {divisions.map((division) => (
             <div
@@ -108,7 +108,7 @@ export default function SpecialisationsPage() {
             >
               <div className="grid lg:grid-cols-3">
                 {/* Left: colour panel */}
-                <div className="p-8 lg:p-10" style={{ backgroundColor: division.color }}>
+                <div className="p-5 sm:p-8 lg:p-10" style={{ backgroundColor: division.color }}>
                   <h2 className="text-2xl font-black text-white mb-3">{division.title}</h2>
                   <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
                     {division.description}
@@ -125,7 +125,7 @@ export default function SpecialisationsPage() {
                 </div>
 
                 {/* Right: roles */}
-                <div className="lg:col-span-2 p-8 lg:p-10" style={{ backgroundColor: 'var(--light-bg)' }}>
+                <div className="lg:col-span-2 p-5 sm:p-8 lg:p-10" style={{ backgroundColor: 'var(--light-bg)' }}>
                   <h3 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: 'var(--text-mid)' }}>
                     Roles we place
                   </h3>

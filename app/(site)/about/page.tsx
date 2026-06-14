@@ -58,8 +58,8 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-start">
+      <section className="py-10 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
               Our Story
@@ -109,7 +109,7 @@ export default function AboutPage() {
                 style={{ backgroundColor: i % 2 === 0 ? '#1E293B' : '#F8FAFC' }}
               >
                 <span
-                  className="text-3xl sm:text-4xl font-black block mb-2"
+                  className="text-2xl sm:text-4xl font-black block mb-1 sm:mb-2"
                   style={{ color: i % 2 === 0 ? 'var(--orange)' : 'var(--navy)' }}
                 >
                   {item.value}
@@ -127,7 +127,7 @@ export default function AboutPage() {
       </section>
 
       {/* Co-Founders */}
-      <section className="py-16 sm:py-24" style={{ backgroundColor: 'var(--light-bg)' }}>
+      <section className="py-10 sm:py-24" style={{ backgroundColor: 'var(--light-bg)' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-16">
             <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
@@ -152,9 +152,9 @@ export default function AboutPage() {
                 title="CEO & Co-Founder"
                 slot="female"
               />
-              <div className="p-8 flex flex-col gap-4">
+              <div className="p-5 sm:p-8 flex flex-col gap-4">
                 <div className="flex items-center gap-2">
-                  <div className="h-0.5 w-8 rounded-full flex-shrink-0" style={{ backgroundColor: 'var(--orange)' }} />
+                  <div className="h-0.5 w-8 rounded-full shrink-0" style={{ backgroundColor: 'var(--orange)' }} />
                   <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--orange)' }}>About Mamta</span>
                 </div>
                 <p className="text-sm leading-7" style={{ color: 'var(--text-mid)' }}>
@@ -186,9 +186,9 @@ export default function AboutPage() {
                 title="CEO & Co-Founder"
                 slot="male"
               />
-              <div className="p-8 flex flex-col gap-4">
+              <div className="p-5 sm:p-8 flex flex-col gap-4">
                 <div className="flex items-center gap-2">
-                  <div className="h-0.5 w-8 rounded-full flex-shrink-0" style={{ backgroundColor: 'var(--orange)' }} />
+                  <div className="h-0.5 w-8 rounded-full shrink-0" style={{ backgroundColor: 'var(--orange)' }} />
                   <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--orange)' }}>About Madhukar</span>
                 </div>
                 <p className="text-sm leading-7" style={{ color: 'var(--text-mid)' }}>
@@ -215,9 +215,9 @@ export default function AboutPage() {
       </section>
 
       {/* Team Photo */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-10 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-7 sm:mb-12">
             <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
               Our Team
             </span>
@@ -237,15 +237,15 @@ export default function AboutPage() {
               width={1400}
               height={800}
               className="w-full object-cover"
-              style={{ maxHeight: '520px', objectPosition: 'center top' }}
+              style={{ maxHeight: 'clamp(260px, 55vw, 520px)', objectPosition: 'center top' }}
             />
             <div
               className="absolute inset-0 flex items-end"
               style={{ background: 'linear-gradient(to top, rgba(0,20,70,0.75) 0%, transparent 55%)' }}
             >
-              <div className="p-8 lg:p-12 w-full">
-                <p className="text-white font-black text-2xl mb-1">TalentPath Management Services</p>
-                <p className="text-white/70 text-sm">Noida, India — Building careers. Powering organisations.</p>
+              <div className="p-5 sm:p-8 lg:p-12 w-full">
+                <p className="text-white font-black text-base sm:text-xl mb-1">TalentPath Management Services</p>
+                <p className="text-white/70 text-xs sm:text-sm">Noida, India — Building careers. Powering organisations.</p>
               </div>
             </div>
           </div>
@@ -253,9 +253,9 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16 sm:py-24" style={{ backgroundColor: 'var(--light-bg)' }}>
+      <section className="py-10 sm:py-24" style={{ backgroundColor: 'var(--light-bg)' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8 sm:mb-14">
             <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: 'var(--orange)' }}>
               What We Stand For
             </span>
@@ -266,7 +266,7 @@ export default function AboutPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, i) => (
-              <div key={i} className="rounded-2xl p-7 bg-white">
+              <div key={i} className="rounded-2xl p-5 sm:p-7 bg-white">
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm mb-5"
                   style={{ backgroundColor: 'var(--orange)' }}

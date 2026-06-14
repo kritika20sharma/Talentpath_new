@@ -56,17 +56,17 @@ export default async function JobsPage() {
     <main>
       {/* Hero */}
       <section
-        className="pt-36 pb-20"
+        className="pt-24 pb-10 sm:pt-36 sm:pb-20"
         style={{ background: 'linear-gradient(135deg, #0F2B50 0%, #1A3A6B 100%)' }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <span className="text-xs font-bold uppercase tracking-widest mb-4 block" style={{ color: 'var(--orange)' }}>
             Current Opportunities
           </span>
-          <h1 className="text-5xl lg:text-6xl font-black text-white leading-tight mb-6 max-w-3xl">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4 sm:mb-6 max-w-3xl">
             Your next role is here.
           </h1>
-          <p className="text-xl text-white/70 max-w-2xl mb-8">
+          <p className="text-base sm:text-xl text-white/70 max-w-2xl mb-6 sm:mb-8">
             Browse roles across 8 specialist divisions — or tell us what you&apos;re looking for and
             we&apos;ll match you to the right opportunity.
           </p>
@@ -96,7 +96,7 @@ export default async function JobsPage() {
       </section>
 
       {/* Listings */}
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {jobs.length === 0 ? (
             <div className="text-center py-20">
@@ -165,10 +165,10 @@ export default async function JobsPage() {
           )}
 
           <div
-            className="mt-12 rounded-2xl p-10 text-center"
+            className="mt-10 rounded-2xl p-6 sm:p-10 text-center"
             style={{ backgroundColor: 'var(--light-bg)' }}
           >
-            <h3 className="text-2xl font-black mb-3" style={{ color: 'var(--navy)' }}>
+            <h3 className="text-xl sm:text-2xl font-black mb-3" style={{ color: 'var(--navy)' }}>
               Don&apos;t see the right role?
             </h3>
             <p className="mb-6" style={{ color: 'var(--text-mid)' }}>
