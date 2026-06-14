@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/Hero';
 import Stats from '@/components/Stats';
+import ClientsMarquee from '@/components/ClientsMarquee';
 import WhatWeDo from '@/components/WhatWeDo';
 import Specialisations from '@/components/Specialisations';
 import BrandPromise from '@/components/BrandPromise';
@@ -19,6 +20,7 @@ export default function Home() {
     <main className="flex flex-col w-full">
       <Hero />
       <Stats />
+      <ClientsMarquee />
       <WhatWeDo />
       <Specialisations />
       <BrandPromise />

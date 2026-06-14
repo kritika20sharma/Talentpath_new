@@ -17,6 +17,11 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 body {
   font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
   color: var(--text-dark);
