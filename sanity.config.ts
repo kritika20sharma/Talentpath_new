@@ -3,8 +3,8 @@ import { structureTool } from 'sanity/structure';
 import { schemaTypes } from './sanity/schemaTypes';
 
 export default defineConfig({
-  name: 'myhr',
-  title: 'myhr CMS',
+  name: 'talentpath',
+  title: 'TalentPath CMS',
   projectId: 'nqczmxpl',
   dataset: 'production',
   plugins: [structureTool()],
