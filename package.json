@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@portabletext/react": "^6.2.0",
     "framer-motion": "^12.39.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^4.2.1",

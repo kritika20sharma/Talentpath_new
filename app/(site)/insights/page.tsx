@@ -6,9 +6,9 @@ import { insightsQuery } from '@/sanity/lib/queries';
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: 'Insights | myhr Recruitment',
+  title: 'Insights | TalentPath',
   description:
-    "Hiring trends, salary guides, career advice and workforce planning insights from myhr's specialist recruitment consultants.",
+    "Hiring trends, salary guides, career advice and workforce planning insights from TalentPath's specialist recruitment consultants.",
 };
 
 interface Post {
@@ -20,10 +20,12 @@ interface Post {
   readTime: string;
   featured: boolean;
   publishedAt: string;
+  author?: string;
+  mainImage?: string;
 }
 
 function formatDate(dateStr: string) {
-  return new Date(dateStr).toLocaleDateString('en-AU', {
+  return new Date(dateStr).toLocaleDateString('en-IN', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -104,17 +106,21 @@ export default async function InsightsPage() {
                     </div>
                   </div>
                   <div
-                    className="min-h-48 lg:min-h-0 flex items-center justify-center"
+                    className="min-h-48 lg:min-h-0 flex items-center justify-center overflow-hidden"
                     style={{
-                      background: 'linear-gradient(135deg, rgba(232,96,28,0.3) 0%, rgba(15,43,80,0.8) 100%)',
+                      background: 'linear-gradient(135deg, rgba(222,132,15,0.25) 0%, rgba(15,43,80,0.85) 100%)',
                     }}
                   >
-                    <div className="text-center p-10">
-                      <div className="text-7xl font-black text-white/10 leading-none">myhr</div>
-                      <div className="text-xl font-black mt-2" style={{ color: 'var(--orange)' }}>
-                        {featured.category}
+                    {featured.mainImage ? (
+                      <img src={featured.mainImage} alt={featured.title} className="w-full h-full object-cover" />
+                    ) : (
+                      <div className="text-center p-10">
+                        <div className="text-7xl font-black text-white/10 leading-none">TP</div>
+                        <div className="text-xl font-black mt-2" style={{ color: 'var(--orange)' }}>
+                          {featured.category}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </article>
               )}

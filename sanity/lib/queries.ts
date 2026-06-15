@@ -22,19 +22,25 @@ export const insightsQuery = groq`
     excerpt,
     readTime,
     featured,
-    publishedAt
+    publishedAt,
+    author,
+    "mainImage": mainImage.asset->url
   }
 `;
 
-export const featuredInsightQuery = groq`
-  *[_type == "blogPost" && featured == true][0] {
+export const singlePostQuery = groq`
+  *[_type == "blogPost" && slug.current == $slug][0] {
     _id,
     title,
     slug,
     category,
     excerpt,
+    body,
     readTime,
-    publishedAt
+    featured,
+    publishedAt,
+    author,
+    "mainImage": mainImage.asset->url
   }
 `;
 
@@ -47,6 +53,8 @@ export const recentInsightsQuery = groq`
     excerpt,
     readTime,
     featured,
-    publishedAt
+    publishedAt,
+    author,
+    "mainImage": mainImage.asset->url
   }
 `;

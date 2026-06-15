@@ -41,6 +41,18 @@ export const blogPost = defineType({
       validation: (Rule) => Rule.required().max(300),
     }),
     defineField({
+      name: 'author',
+      title: 'Author',
+      type: 'string',
+      description: 'e.g. Mamta Saharan',
+    }),
+    defineField({
+      name: 'mainImage',
+      title: 'Cover Image',
+      type: 'image',
+      options: { hotspot: true },
+    }),
+    defineField({
       name: 'body',
       title: 'Body',
       type: 'array',
