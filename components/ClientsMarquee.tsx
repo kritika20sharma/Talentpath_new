@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, CSSProperties } from 'react';
-import Image from 'next/image';
 
 const clients = [
   { name: 'Mercedes-Benz',     logo: '/images/clients/mercedes-benz.svg',    color: '#1a1a1a' },
@@ -46,15 +45,13 @@ function ClientCard({ name, logo, color }: { name: string; logo: string; color: 
       } as CSSProperties}
     >
       {!imgError ? (
-        <Image
+        // eslint-disable-next-line @next/next/no-img-element -- natural aspect ratio must drive sizing; next/image's width/height props force a fixed frame that letterboxes non-matching logos
+        <img
           src={logo}
           alt={name}
-          width={140}
-          height={56}
-          unoptimized={logo.endsWith('.svg')}
-          className="object-contain w-auto"
+          className="object-contain w-auto max-w-35"
           style={{
-            maxHeight: '44px',
+            height: '44px',
             filter: over ? 'grayscale(0%) opacity(1)' : 'grayscale(100%) opacity(0.5)',
             transition: 'filter 0.3s ease',
           }}
