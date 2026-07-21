@@ -3,6 +3,7 @@ import FadeUp from './FadeUp';
 
 const industries = [
   { id: 'auto', title: 'Automobile & Automotive', roles: ['Plant Head', 'Quality Manager', 'R&D Engineer', 'Supply Chain Lead'], color: '#004bb2' },
+  { id: 'ev', title: 'EV Hiring', roles: ['Battery Systems Engineer', 'EV Powertrain Lead', 'Charging Infra Manager', 'Cell & Battery Supply Chain'], color: '#0e9f6e' },
   { id: 'bfsi', title: 'Banking & Financial Services', roles: ['CFO', 'Risk Manager', 'Credit Analyst', 'Investment Banker'], color: '#1a63d4' },
   { id: 'oil', title: 'Oil, Gas & EPC / Ceramics', roles: ['Project Director', 'HSE Manager', 'Process Engineer', 'Procurement Lead'], color: '#de840f' },
   { id: 'fmcg', title: 'FMCG & Consumer Durables', roles: ['Brand Manager', 'Sales Director', 'Category Head', 'Supply Chain'], color: '#004bb2' },
@@ -23,7 +24,7 @@ export default function Specialisations() {
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 sm:mb-5" style={{ color: 'var(--navy)' }}>
             Deep expertise across
-            <br />9 specialist verticals.
+            <br />10 specialist verticals.
           </h2>
           <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-mid)' }}>
             Our consultants are embedded in their sectors — meaning faster shortlists, sharper

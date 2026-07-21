@@ -12,7 +12,7 @@ import Newsletter from '@/components/Newsletter';
 export const metadata: Metadata = {
   title: 'TalentPath — Unlock Potential, Empower People.',
   description:
-    'TalentPath connects exceptional talent with remarkable organisations across 9 specialist industries. Lateral Hiring, Executive Search and RPO across India.',
+    'TalentPath connects exceptional talent with remarkable organisations across 10 specialist industries. Lateral Hiring, Executive Search and RPO across India.',
 };
 
 export default function Home() {

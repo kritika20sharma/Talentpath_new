@@ -20,6 +20,24 @@ const services = [
     desc: 'End-to-end Recruitment Process Outsourcing — we embed within your organisation to manage the entire hiring lifecycle, from sourcing and screening to onboarding.',
     href: '/what-we-do#rpo',
   },
+  {
+    icon: <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5" />,
+    title: 'Green Field Hiring',
+    desc: 'Complete workforce build-out for new plants, facilities and business units — from leadership down to shop floor, hired before the first brick is laid.',
+    href: '/what-we-do#greenfield',
+  },
+  {
+    icon: <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />,
+    title: 'RPO Hiring',
+    desc: 'Scalable, high-volume outsourced hiring campaigns with dedicated recruiter pods — built for organisations that need to hire fast without growing an internal TA team.',
+    href: '/what-we-do#rpo-hiring',
+  },
+  {
+    icon: <path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />,
+    title: 'Gender Diversification',
+    desc: 'Targeted sourcing and outreach programs that help clients build genuinely balanced teams — expanding the funnel, not lowering the bar.',
+    href: '/what-we-do#gender-diversification',
+  },
 ];
 
 export default function WhatWeDo() {
@@ -32,7 +50,7 @@ export default function WhatWeDo() {
               What We Do
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight" style={{ color: 'var(--navy)' }}>
-              Three services.
+              Six services.
               <br />One promise of precision.
             </h2>
           </div>

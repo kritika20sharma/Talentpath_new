@@ -2,75 +2,91 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Specialisations | myhr Recruitment',
+  title: 'Specialisations | TalentPath Management Services',
   description:
-    'Deep specialist recruitment expertise across Accounting & Finance, Technology, Sales, Marketing, HR, Customer Experience, Business Services and Projects & Change.',
+    'Deep specialist recruitment expertise across Automobile, EV, BFSI, Oil & Gas, FMCG, Pharmaceutical, Retail, IT & Telecom and Research — TalentPath\'s 10 industry verticals.',
 };
 
 const divisions = [
   {
-    id: 'accounting',
-    title: 'Accounting & Finance',
+    id: 'auto',
+    title: 'Automobile & Automotive',
     description:
-      'From bookkeepers to CFOs, we understand the technical depth, commercial acumen and leadership qualities required at every level of finance.',
-    roles: ['CFO / Finance Director', 'Financial Controller', 'Management Accountant', 'Senior Analyst', 'Finance Business Partner', 'Bookkeeper / AP/AR', 'Treasury & Tax'],
-    color: 'var(--navy)',
+      'From plant leadership to R&D, we place the talent that keeps India\'s automotive manufacturing engine running — across OEMs, Tier-1s and component makers.',
+    roles: ['Plant Head', 'Quality Manager', 'R&D Engineer', 'Supply Chain Lead', 'Production Manager', 'Manufacturing Excellence', 'Sales & Dealer Development'],
+    color: '#004bb2',
   },
   {
-    id: 'technology',
-    title: 'Technology',
+    id: 'ev',
+    title: 'EV Hiring',
     description:
-      'Our tech consultants are former practitioners — they understand full-stack from the back-end to the boardroom, and can assess cultural fit alongside technical skill.',
-    roles: ['Software Engineer (all stacks)', 'Data Scientist / Engineer', 'DevOps / Cloud', 'Product Manager', 'UX / UI Designer', 'CTO / VP Engineering', 'Cybersecurity'],
-    color: '#1A3A6B',
+      'Electric mobility is being built by people who didn\'t exist in this industry five years ago. We specialise in sourcing the battery, powertrain and charging-infrastructure talent this shift demands.',
+    roles: ['Battery Systems Engineer', 'EV Powertrain Lead', 'Charging Infra Manager', 'Cell & Battery Supply Chain', 'BMS Software Engineer', 'EV Product Manager', 'Homologation & Compliance'],
+    color: '#0e9f6e',
   },
   {
-    id: 'sales',
-    title: 'Sales',
+    id: 'bfsi',
+    title: 'Banking & Financial Services',
     description:
-      'Sales performance starts with hiring the right character, not just the right track record. We go deeper than the CV to find commercial talent that sticks.',
-    roles: ['BDM / Account Executive', 'Account Manager', 'Sales Director', 'Inside Sales', 'Channel & Partnerships', 'Pre-Sales / Solutions', 'VP Sales'],
-    color: 'var(--orange)',
+      'Regulatory pressure, digital disruption and fierce competition for talent — we help BFSI organisations hire leaders and specialists who can operate under all three.',
+    roles: ['CFO', 'Risk Manager', 'Credit Analyst', 'Investment Banker', 'Relationship Manager', 'Compliance Officer', 'Treasury Head'],
+    color: '#1a63d4',
   },
   {
-    id: 'marketing',
-    title: 'Marketing & Digital',
+    id: 'oil',
+    title: 'Oil, Gas & EPC / Ceramics',
     description:
-      'Brand builders, performance marketers, content strategists and CMOs — we place the talent driving Australia\'s most recognised marketing functions.',
-    roles: ['CMO / Marketing Director', 'Brand Manager', 'Digital & Performance', 'Content & SEO', 'CRM & Automation', 'PR & Communications', 'Creative Director'],
-    color: 'var(--navy)',
+      'Large-scale projects need leaders who can manage cost, safety and timeline simultaneously. We place the project and engineering talent behind India\'s energy and infrastructure build-out.',
+    roles: ['Project Director', 'HSE Manager', 'Process Engineer', 'Procurement Lead', 'Construction Manager', 'Piping Engineer', 'Commissioning Lead'],
+    color: '#de840f',
   },
   {
-    id: 'hr',
-    title: 'Human Resources',
+    id: 'fmcg',
+    title: 'FMCG & Consumer Durables',
     description:
-      'Who better to place HR professionals than a people-first recruiter? We genuinely understand the craft of HR and what great looks like at every level.',
-    roles: ['CHRO / HR Director', 'HR Business Partner', 'L&D Manager', 'Talent Acquisition Lead', 'Reward & Remuneration', 'WHS / Safety', 'ER Specialist'],
-    color: '#1A3A6B',
+      'Category winners are built by people, not just products. We place the brand, sales and supply chain leaders who drive share in India\'s most competitive consumer markets.',
+    roles: ['Brand Manager', 'Sales Director', 'Category Head', 'Supply Chain', 'Trade Marketing Manager', 'Key Account Manager', 'Demand Planning'],
+    color: '#004bb2',
   },
   {
-    id: 'cx',
-    title: 'Customer Experience',
+    id: 'pharma',
+    title: 'Pharmaceutical & Healthcare',
     description:
-      'CX is where brands win or lose their customers. We place the leaders and specialists who make every touchpoint count.',
-    roles: ['CX Director', 'Customer Success Manager', 'Contact Centre Manager', 'Support Lead', 'Voice of Customer', 'Service Design', 'Retention Specialist'],
-    color: 'var(--orange)',
+      'From regulatory affairs to clinical research, pharma hiring demands precision — a single wrong hire can delay a launch or an approval. We understand the stakes.',
+    roles: ['Medical Director', 'Regulatory Affairs', 'Clinical Research', 'QA Manager', 'Plant Head (API/Formulations)', 'Medical Science Liaison', 'Pharmacovigilance'],
+    color: '#1a63d4',
   },
   {
-    id: 'business',
-    title: 'Business Services',
+    id: 'retail',
+    title: 'Retail & Textile',
     description:
-      'The operational backbone of every organisation — we place the professionals who keep businesses running smoothly and efficiently.',
-    roles: ['EA / PA / Executive Assistant', 'Office Manager', 'Operations Manager', 'Legal Secretary', 'Reception & Administration', 'Facilities', 'Procurement'],
-    color: 'var(--navy)',
+      'Retail talent has to understand both the shop floor and the balance sheet. We place operators and merchandisers who move fast and read numbers just as fast.',
+    roles: ['Store Operations', 'Buying & Merchandising', 'Visual Merchandiser', 'VM Head', 'Category Manager', 'E-commerce Lead', 'Franchise Operations'],
+    color: '#de840f',
   },
   {
-    id: 'projects',
-    title: 'Projects & Change',
+    id: 'it',
+    title: 'IT & Telecom',
     description:
-      'Transformation initiatives live or die by the quality of their leadership. We place project and change professionals who deliver.',
-    roles: ['Programme / Project Manager', 'Change Manager', 'Business Analyst', 'PMO Lead', 'Agile Coach / Scrum Master', 'Process Improvement', 'ERP Implementation'],
-    color: '#1A3A6B',
+      'Technology hiring moves fast and candidates have options. Our consultants understand the stack well enough to assess it — and move quickly enough to close it.',
+    roles: ['Software Engineer', 'Product Manager', 'CTO', 'Data Scientist', 'DevOps / Cloud Engineer', 'Network Engineer', 'Cybersecurity Lead'],
+    color: '#004bb2',
+  },
+  {
+    id: 'research',
+    title: 'Research, Analytics & Consulting',
+    description:
+      'We place the analysts and consultants who turn data into decisions — for organisations that treat insight as a competitive advantage, not a reporting exercise.',
+    roles: ['Data Analyst', 'Research Lead', 'Strategy Consultant', 'BI Manager', 'Market Research Manager', 'Data Engineer', 'Insights & Analytics Head'],
+    color: '#1a63d4',
+  },
+  {
+    id: 'other',
+    title: 'Other Industries',
+    description:
+      'Great hiring judgement travels across sectors. Where a role sits outside our nine core verticals, our consultants still bring the same rigour and network depth.',
+    roles: ['Cross-sector leadership', 'Functional specialists', 'Niche domain experts'],
+    color: '#de840f',
   },
 ];
 
@@ -87,7 +103,7 @@ export default function SpecialisationsPage() {
             Specialisations
           </span>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4 sm:mb-6 max-w-3xl">
-            Eight divisions. One standard of excellence.
+            Ten divisions. One standard of excellence.
           </h1>
           <p className="text-base sm:text-xl text-white/70 max-w-2xl">
             Our consultants are genuine specialists — they know your market, your competition, and the

@@ -4,6 +4,9 @@ const services = [
   { label: 'Lateral Hiring', href: '/what-we-do#lateral' },
   { label: 'Executive Search', href: '/what-we-do#executive' },
   { label: 'Managed Recruitment (RPO)', href: '/what-we-do#rpo' },
+  { label: 'Green Field Hiring', href: '/what-we-do#greenfield' },
+  { label: 'RPO Hiring', href: '/what-we-do#rpo-hiring' },
+  { label: 'Gender Diversification', href: '/what-we-do#gender-diversification' },
 ];
 
 const industries = [
@@ -12,6 +15,7 @@ const industries = [
   { label: 'Pharmaceutical & Healthcare', href: '/specialisations#pharma' },
   { label: 'FMCG & Consumer Durables', href: '/specialisations#fmcg' },
   { label: 'Automobile & Automotive', href: '/specialisations#auto' },
+  { label: 'EV Hiring', href: '/specialisations#ev' },
   { label: 'Oil, Gas & EPC', href: '/specialisations#oil' },
   { label: 'Research & Analytics', href: '/specialisations#research' },
   { label: 'Retail & Textile', href: '/specialisations#retail' },

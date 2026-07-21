@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const panelStats = [
-  { value: '9+', label: 'Specialist Industries' },
+  { value: '10+', label: 'Specialist Industries' },
   { value: '500+', label: 'Successful Placements' },
   { value: '3 Days', label: 'Avg. Shortlist Delivery' },
   { value: '24/7', label: 'Client Support' },
@@ -136,7 +136,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           TalentPath delivers Lateral Hiring, Executive Search and Managed Recruitment Services
-          across 9 specialist industries — with precision, speed and genuine care.
+          across 10 specialist industries — with precision, speed and genuine care.
         </motion.p>
 
         {/* Premium glass information panel */}
@@ -197,7 +197,7 @@ export default function Hero() {
             </div>
             <h2 className="text-xl font-bold text-white mb-2">Looking to hire?</h2>
             <p className="text-white/80 text-sm leading-relaxed mb-4">
-              Access India&apos;s top talent across 9 industries. We fill roles with precision — not just speed.
+              Access India&apos;s top talent across 10 industries. We fill roles with precision — not just speed.
             </p>
             <Link href="/contact" className="inline-flex items-center gap-2 text-white font-bold text-sm group-hover:gap-3 transition-all">
               Hire with TalentPath

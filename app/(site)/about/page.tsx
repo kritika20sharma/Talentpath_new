@@ -6,7 +6,7 @@ import FounderPhotoUpload from '@/components/FounderPhotoUpload';
 export const metadata: Metadata = {
   title: 'About Us | TalentPath Management Services',
   description:
-    'Meet the co-founders and team behind TalentPath — India\'s specialist recruitment partner for Lateral Hiring, Executive Search and Managed Recruitment across 9 industries.',
+    'Meet the co-founders and team behind TalentPath — India\'s specialist recruitment partner for Lateral Hiring, Executive Search and Managed Recruitment across 10 industries.',
 };
 
 const values = [
@@ -29,7 +29,7 @@ const values = [
 ];
 
 const milestones = [
-  { value: '9+', label: 'Specialist industries served' },
+  { value: '10+', label: 'Specialist industries served' },
   { value: '500+', label: 'Successful placements' },
   { value: '15+', label: 'Years of combined experience' },
   { value: '24/7', label: 'Consultant availability' },
@@ -79,9 +79,9 @@ export default function AboutPage() {
                 candidates who truly fit.
               </p>
               <p>
-                Today, TalentPath operates across 9 specialist verticals — from Automobile and
-                Oil &amp; Gas to BFSI and Pharma — serving mid-level professionals to C-suite
-                executives, with the same care at every level.
+                Today, TalentPath operates across 10 specialist verticals — from Automobile and
+                EV to BFSI and Pharma — serving mid-level professionals to C-suite executives,
+                with the same care at every level.
               </p>
             </div>
 

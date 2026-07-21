@@ -2,20 +2,20 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'What We Do | myhr Recruitment',
+  title: 'What We Do | TalentPath Management Services',
   description:
-    'myhr offers permanent recruitment, temporary staffing, volume hiring and executive search across 8 specialist divisions in Australia.',
+    'TalentPath offers Lateral Hiring, Executive Search, Managed Recruitment (RPO), Green Field Hiring, RPO Hiring and Gender Diversification across 10 specialist industries in India.',
 };
 
 const services = [
   {
-    id: 'permanent',
+    id: 'lateral',
     number: '01',
-    title: 'Permanent Recruitment',
+    title: 'Lateral Hiring',
     tagline: 'The right person, not just the available one.',
     body: [
-      'We run comprehensive candidate searches across multiple channels — proactive headhunting, talent pools, referrals, and targeted job advertising — to surface candidates who fit your role and your culture.',
-      'Our consultants manage the entire process: briefing, search, shortlisting, interview coordination, reference checking, and offer management. You stay focused on running your business.',
+      'Targeted search for mid to senior professionals moving across industries and functions. We run comprehensive candidate searches across multiple channels — proactive headhunting, talent pools, referrals, and precision job advertising — to surface candidates who fit your role and your culture.',
+      'Our consultants manage the entire process: briefing, search, shortlisting, interview coordination, reference checking, and offer management, so you stay focused on running your business.',
     ],
     features: [
       'Role scoping and job brief workshops',
@@ -26,42 +26,8 @@ const services = [
     ],
   },
   {
-    id: 'temporary',
-    number: '02',
-    title: 'Temporary Staffing',
-    tagline: 'Fast, flexible talent when you need it most.',
-    body: [
-      'Whether you\'re covering leave, managing a project surge, or testing new capabilities before committing to a permanent hire, our temporary staffing solution gives you the agility your business needs.',
-      'We maintain a ready bench of vetted candidates across all our specialist divisions — so when you call, we can often deploy talent within 24–48 hours.',
-    ],
-    features: [
-      '24–48 hour deployment capability',
-      'Full contractor payroll management',
-      'Vetted candidate pool across all divisions',
-      'Flexible engagement periods',
-      'Trial-to-permanent pathways',
-    ],
-  },
-  {
-    id: 'volume',
-    number: '03',
-    title: 'Volume Recruitment',
-    tagline: 'Scale your team without scaling your headaches.',
-    body: [
-      'Rapid workforce builds, graduate intakes, contact centre ramp-ups, or large-scale operational hiring — our volume recruitment model is built for speed, quality, and candidate experience at scale.',
-      'We deploy dedicated project teams with structured assessment centres, digital screening tools, and employer branding support to ensure every hire reflects your values.',
-    ],
-    features: [
-      'Dedicated hiring project teams',
-      'Assessment centre design and delivery',
-      'Digital screening and ATS integration',
-      'Employer branding consultation',
-      'Reporting and hiring analytics',
-    ],
-  },
-  {
     id: 'executive',
-    number: '04',
+    number: '02',
     title: 'Executive Search',
     tagline: 'Leadership that transforms organisations.',
     body: [
@@ -74,6 +40,74 @@ const services = [
       'Executive assessment and psychometric profiling',
       'Market intelligence and competitor analysis',
       'Retained and contingency engagement models',
+    ],
+  },
+  {
+    id: 'rpo',
+    number: '03',
+    title: 'Managed Recruitment (RPO)',
+    tagline: 'A hiring engine, not just an agency.',
+    body: [
+      'End-to-end Recruitment Process Outsourcing — we embed within your organisation to manage the entire hiring lifecycle, from sourcing and screening to onboarding, as a seamless extension of your HR team.',
+      'You get predictable cost-per-hire, consistent quality, and a dedicated team that lives inside your process — not a rotating cast of external recruiters.',
+    ],
+    features: [
+      'Dedicated embedded recruiter pods',
+      'Full-lifecycle process ownership',
+      'ATS and workflow integration',
+      'SLA-backed turnaround times',
+      'Hiring analytics and reporting dashboards',
+    ],
+  },
+  {
+    id: 'greenfield',
+    number: '04',
+    title: 'Green Field Hiring',
+    tagline: 'Building a workforce before the first brick is laid.',
+    body: [
+      'New plants, facilities and business units need a workforce built from zero — with no legacy team to lean on. We plan and execute complete build-outs, from site leadership down to shop-floor roles, phased against your commissioning timeline.',
+      'We combine local labour-market mapping with our specialist industry networks to hire at speed without compromising on quality — critical when a delayed hire can delay a plant opening.',
+    ],
+    features: [
+      'Workforce planning against commissioning timelines',
+      'Leadership-to-shop-floor hiring in one engagement',
+      'Local labour-market and wage benchmarking',
+      'Phased, milestone-based delivery',
+      'On-ground hiring drives and assessment days',
+    ],
+  },
+  {
+    id: 'rpo-hiring',
+    number: '05',
+    title: 'RPO Hiring',
+    tagline: 'High-volume hiring, without a bigger TA team.',
+    body: [
+      'For organisations that need to hire fast and at scale — seasonal ramp-ups, new market entry, or aggressive growth targets — without permanently growing an internal talent acquisition function.',
+      'We stand up dedicated recruiter pods sized to your volume, scaling up or down with demand, so you pay for hiring capacity only when you need it.',
+    ],
+    features: [
+      'Elastic recruiter capacity, scaled to demand',
+      'Structured screening and assessment at volume',
+      'Digital sourcing and ATS-driven pipelines',
+      'Weekly hiring velocity reporting',
+      'Seamless wind-down when volume tapers',
+    ],
+  },
+  {
+    id: 'gender-diversification',
+    number: '06',
+    title: 'Gender Diversification',
+    tagline: 'Expanding the funnel, not lowering the bar.',
+    body: [
+      'Targeted sourcing and outreach programs designed to help clients build genuinely balanced teams — reaching qualified women candidates who aren\'t showing up through standard channels.',
+      'We work with hiring teams on inclusive job design and structured, bias-aware interview processes, so diversity hiring translates into diversity retention.',
+    ],
+    features: [
+      'Targeted sourcing and community outreach',
+      'Inclusive job description review',
+      'Structured, bias-aware interview design',
+      'Diversity hiring pipeline reporting',
+      'Return-to-work and career-break hiring programs',
     ],
   },
 ];
@@ -94,7 +128,7 @@ export default function WhatWeDoPage() {
             Recruitment built around your goals.
           </h1>
           <p className="text-base sm:text-xl text-white/70 max-w-2xl">
-            Four flexible service models. One consistent promise: we find the right people, not just
+            Six flexible service models. One consistent promise: we find the right people, not just
             the available ones.
           </p>
         </div>
@@ -152,7 +186,7 @@ export default function WhatWeDoPage() {
                   {service.features.map((feat) => (
                     <li key={feat} className="flex items-start gap-3">
                       <svg
-                        className="w-5 h-5 flex-shrink-0 mt-0.5"
+                        className="w-5 h-5 shrink-0 mt-0.5"
                         style={{ color: 'var(--orange)' }}
                         fill="currentColor"
                         viewBox="0 0 20 20"

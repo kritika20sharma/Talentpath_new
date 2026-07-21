@@ -12,7 +12,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'TalentPath — Connecting Talent, Creating Futures.',
   description:
-    'TalentPath Management Services offers Lateral Hiring, Executive Search and Managed Recruitment (RPO) across 9 industries. Based in Noida, serving clients globally.',
+    'TalentPath Management Services offers Lateral Hiring, Executive Search and Managed Recruitment (RPO) across 10 industries. Based in Noida, serving clients globally.',
   keywords: [
     'TalentPath recruitment',
     'lateral hiring India',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'TalentPath — Connecting Talent, Creating Futures.',
-    description: 'Lateral Hiring, Executive Search and Managed Recruitment across 9 industries. Noida-based, globally connected.',
+    description: 'Lateral Hiring, Executive Search and Managed Recruitment across 10 industries. Noida-based, globally connected.',
     type: 'website',
     url: 'https://talentpath.co.in',
   },

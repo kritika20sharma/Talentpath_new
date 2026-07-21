@@ -48,7 +48,7 @@ const fallback: Post[] = [
     _id: '3',
     category: 'Salary Guide',
     title: "India's 2026 Salary Benchmarks: BFSI, Pharma & Oil/Gas",
-    excerpt: 'Real compensation data across 9 specialist verticals — built from active placement intelligence, not surveys.',
+    excerpt: 'Real compensation data across 10 specialist verticals — built from active placement intelligence, not surveys.',
     readTime: '7 min read',
     publishedAt: '2026-02-01',
     slug: { current: '#' },
