@@ -8,7 +8,7 @@ interface Props {
   alt: string;
   name: string;
   title: string;
-  slot: 'female' | 'male';
+  slot: string;
 }
 
 export default function FounderPhotoUpload({ src, alt, name, title, slot }: Props) {

@@ -18,6 +18,12 @@ const clients = [
   { name: 'Infogain',          logo: '/images/clients/infogain.png',          color: '#1a1a1a' },
   { name: 'Ciena',             logo: '/images/clients/ciena.png',             color: '#cc0000' },
   { name: 'Brainvire',         logo: '/images/clients/brainvire.png',         color: '#2196f3' },
+  { name: 'Fuso',              logo: '/images/clients/fuso_truck.png',        color: '#e2231a' },
+  { name: 'Daimler',           logo: '/images/clients/daimler.png',           color: '#002955' },
+  { name: 'Honda Design',      logo: '/images/clients/honda_design.png',      color: '#1a1a1a' },
+  { name: 'Clariant',          logo: '/images/clients/ClariantLogo.png',      color: '#111111' },
+  { name: 'MetTube',           logo: '/images/clients/mettube.png',           color: '#c8762f' },
+  { name: 'Blue Star',         logo: '/images/clients/blue-star.png',         color: '#004e9f' },
 ];
 
 const track = [...clients, ...clients];

@@ -126,7 +126,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Co-Founders */}
+      {/* Leadership */}
       <section className="py-10 sm:py-24" style={{ backgroundColor: 'var(--light-bg)' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-16">
@@ -134,14 +134,14 @@ export default function AboutPage() {
               Leadership
             </span>
             <h2 className="text-3xl sm:text-4xl font-black" style={{ color: 'var(--navy)' }}>
-              Meet the Co-Founders
+              Meet the Leadership Team
             </h2>
             <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: 'var(--text-mid)' }}>
-              Two leaders with decades of combined experience building India&apos;s most trusted specialist recruitment practice.
+              Leaders with decades of combined experience building India&apos;s most trusted specialist recruitment practice.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-3 gap-8">
 
             {/* Mamta Saharan */}
             <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
@@ -207,6 +207,39 @@ export default function AboutPage() {
                   Non-Banking Financial Services. He has successfully placed senior executives across
                   Automobile, FMCG, Consumer Durables, EPC, Oil &amp; Gas, Banking, NBFC, Analytics
                   &amp; Consulting — with leading organisations throughout India.
+                </p>
+              </div>
+            </div>
+
+            {/* Sohail Khan */}
+            <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
+              <FounderPhotoUpload
+                src="/images/Sohail.jpg"
+                alt="Sohail Khan — VP, Recruitment & Business Operations"
+                name="Sohail Khan"
+                title="VP - Recruitment & Business Operations"
+                slot="sohail"
+              />
+              <div className="p-5 sm:p-8 flex flex-col gap-4">
+                <div className="flex items-center gap-2">
+                  <div className="h-0.5 w-8 rounded-full shrink-0" style={{ backgroundColor: 'var(--orange)' }} />
+                  <span className="text-xs font-bold uppercase tracking-widest" style={{ color: 'var(--orange)' }}>About Sohail</span>
+                </div>
+                <p className="text-sm leading-7" style={{ color: 'var(--text-mid)' }}>
+                  An alumnus with a BCA and an MBA in HR &amp; Marketing, Sohail combines technical
+                  acumen with strategic people management to deliver high-impact recruitment
+                  solutions.
+                </p>
+                <p className="text-sm leading-7" style={{ color: 'var(--text-mid)' }}>
+                  With <strong style={{ color: 'var(--navy)' }}>over 15 years of experience</strong>,
+                  he bridges the gap between top-tier talent and organisational growth — having
+                  successfully managed end-to-end recruitment lifecycles, cross-functional teams,
+                  and full P&amp;L responsibility. His versatile expertise spans Automobile, Auto
+                  Components, Steel, Power, Mining, Chemical, FMCG, EPC, Retail and IT.
+                </p>
+                <p className="text-sm leading-7" style={{ color: 'var(--text-mid)' }}>
+                  Known for his exceptional client handling and data-driven approach, he is dedicated
+                  to building robust teams that drive sustainable business success.
                 </p>
               </div>
             </div>

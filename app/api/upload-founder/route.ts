@@ -9,12 +9,13 @@ export async function POST(req: NextRequest) {
 
   const formData = await req.formData();
   const file = formData.get('file') as File;
-  const slot = (formData.get('slot') as string) || 'female';
+  const rawSlot = (formData.get('slot') as string) || 'female';
+  const slot = rawSlot.replace(/[^a-z0-9-]/gi, '');
 
-  if (!file) return NextResponse.json({ error: 'No file' }, { status: 400 });
+  if (!file || !slot) return NextResponse.json({ error: 'No file' }, { status: 400 });
 
   const buffer = Buffer.from(await file.arrayBuffer());
-  const filename = slot === 'male' ? 'founder-male.jpg' : 'founder-female.jpg';
+  const filename = `founder-${slot}.jpg`;
   const filePath = path.join(process.cwd(), 'public/images', filename);
 
   await writeFile(filePath, buffer);

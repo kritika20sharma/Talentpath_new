@@ -3,6 +3,13 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
+const panelStats = [
+  { value: '9+', label: 'Specialist Industries' },
+  { value: '500+', label: 'Successful Placements' },
+  { value: '3 Days', label: 'Avg. Shortlist Delivery' },
+  { value: '24/7', label: 'Client Support' },
+];
+
 const contactDetails = [
   {
     label: 'Call Us',
@@ -58,7 +65,7 @@ export default function Hero() {
       <div className="absolute top-0 left-0 right-0 h-screen overflow-hidden z-0">
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/videos/combined.mp4"
+          src="/videos/home-banner.mp4"
           autoPlay
           muted
           loop
@@ -131,6 +138,48 @@ export default function Hero() {
           TalentPath delivers Lateral Hiring, Executive Search and Managed Recruitment Services
           across 9 specialist industries — with precision, speed and genuine care.
         </motion.p>
+
+        {/* Premium glass information panel */}
+        <motion.div
+          className="relative w-full max-w-3xl mx-auto mb-10 sm:mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          <div
+            className="relative overflow-hidden rounded-3xl px-6 sm:px-10 py-6 sm:py-8"
+            style={{
+              background: 'rgba(255,255,255,0.08)',
+              backdropFilter: 'blur(24px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(24px) saturate(180%)',
+              border: '1px solid rgba(255,255,255,0.18)',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+            }}
+          >
+            {/* Top sheen for glass highlight */}
+            <div
+              className="pointer-events-none absolute inset-x-0 top-0 h-px"
+              style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent)' }}
+            />
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-5 gap-x-4">
+              {panelStats.map((stat, i) => (
+                <div
+                  key={stat.label}
+                  className={`flex flex-col items-center text-center ${i < panelStats.length - 1 ? 'sm:border-r' : ''}`}
+                  style={i < panelStats.length - 1 ? { borderColor: 'rgba(255,255,255,0.15)' } : undefined}
+                >
+                  <span className="text-2xl sm:text-3xl font-black leading-none mb-1.5" style={{ color: 'var(--orange)' }}>
+                    {stat.value}
+                  </span>
+                  <span className="text-[11px] sm:text-xs font-medium uppercase tracking-wide leading-snug" style={{ color: 'rgba(255,255,255,0.70)' }}>
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
 
         {/* Dual CTA */}
         <motion.div
