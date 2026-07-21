@@ -23,6 +23,10 @@ const clients = [
   { name: 'Clariant',          logo: '/images/clients/ClariantLogo.png',      color: '#111111' },
   { name: 'MetTube',           logo: '/images/clients/mettube.png',           color: '#c8762f' },
   { name: 'Blue Star',         logo: '/images/clients/blue-star.png',         color: '#004e9f' },
+  { name: 'Nayara Energy',     logo: '/images/clients/Nayara_Energy.png',     color: '#13447e' },
+  { name: 'Jockey',            logo: '/images/clients/jockey.png',            color: '#1a1a1a' },
+  { name: 'Total Lubricants',  logo: '/images/clients/Total_Lubricants_Logo.png', color: '#ec1b3b' },
+  { name: 'Ethos Watch Boutiques', logo: '/images/clients/ethos.png',         color: '#9f1c21' },
 ];
 
 const track = [...clients, ...clients];
